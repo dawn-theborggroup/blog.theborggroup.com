@@ -99,13 +99,13 @@
   <!-- Featured / most recent post -->
   <article class="featured-post">
     <div class="featured-post__media">
-      <img src="assets/images/cape-coral-canal-real.jpg" alt="A Gulf-access canal lined with waterfront homes in Cape Coral, Florida" loading="lazy">
+      <img src="assets/images/southwest-florida-gated-community-entrance.jpg" alt="Gated community entrance in Southwest Florida" loading="lazy">
     </div>
     <div>
-      <p class="post-row__cat">Relocation</p>
-      <h2><a href='https://blog.theborggroup.com/posts/moving-to-cape-coral-relocation-guide'>Moving to Cape Coral, FL: the 2026 complete relocation guide</a></h2>
-      <p class="excerpt">400+ miles of canals, no HOA on most homes, and a genuine buyer's market — what you need to know before relocating to Cape Coral in 2026.</p>
-      <a class='read-link' href='https://blog.theborggroup.com/posts/moving-to-cape-coral-relocation-guide'>Read the full guide →</a>
+      <p class="post-row__cat">Buyer Tips</p>
+      <h2><a href='https://blog.theborggroup.com/posts/how-to-evaluate-florida-hoa-before-buying-southwest-florida-2026'>How to Evaluate a Florida HOA Before Buying: A 2026 Southwest Florida Buyer's Guide</a></h2>
+      <p class="excerpt">Florida HOA review checklist for Southwest Florida buyers — reserve fund health, CC&amp;Rs, estoppel certificate, and the red flags that cost thousands after closing.</p>
+      <a class='read-link' href='https://blog.theborggroup.com/posts/how-to-evaluate-florida-hoa-before-buying-southwest-florida-2026'>Read the full guide →</a>
     </div>
   </article>
 
@@ -877,6 +877,51 @@
   </div>
   <div id="borgbot-slot"></div>
 </footer>
+<script>
+  // Keep the featured post in sync with the newest post in the list below,
+  // so this card never goes stale even if a future update only touches the list.
+  document.addEventListener('DOMContentLoaded', function () {
+    var newest = document.querySelector('.post-list .post-row');
+    var card = document.querySelector('.featured-post');
+    if (!newest || !card) return;
 
+    var postUrl = newest.getAttribute('href');
+    var title = newest.querySelector('.post-row__title').textContent.trim();
+    var category = newest.querySelector('.post-row__cat').textContent.trim();
+
+    fetch(postUrl)
+      .then(function (res) { return res.text(); })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var heroImg = doc.querySelector('.post-hero-media img');
+        var descriptionMeta = doc.querySelector('meta[name="description"]');
+        var excerpt = descriptionMeta ? descriptionMeta.getAttribute('content') : '';
+
+        var cardImg = card.querySelector('.featured-post__media img');
+        if (cardImg && heroImg) {
+          cardImg.src = new URL(heroImg.getAttribute('src'), postUrl).href;
+          cardImg.alt = heroImg.getAttribute('alt') || title;
+        }
+
+        var catEl = card.querySelector('.post-row__cat');
+        if (catEl) catEl.textContent = category;
+
+        var titleLink = card.querySelector('h2 a');
+        if (titleLink) {
+          titleLink.href = postUrl;
+          titleLink.textContent = title;
+        }
+
+        var excerptEl = card.querySelector('.excerpt');
+        if (excerptEl && excerpt) excerptEl.textContent = excerpt;
+
+        var readLink = card.querySelector('.read-link');
+        if (readLink) readLink.href = postUrl;
+      })
+      .catch(function () {
+        // Network hiccup: leave the existing static card as a safe fallback.
+      });
+  });
+</script>
 </body>
 </html>
