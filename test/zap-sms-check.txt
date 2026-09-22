@@ -1,0 +1,1 @@
+This is a harmless test file used on 2026-09-22 to confirm the GitHub -> Zapier -> SMS notification pipeline fires correctly. Safe to ignore/delete.
