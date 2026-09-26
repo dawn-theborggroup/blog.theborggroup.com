@@ -1,0 +1,17 @@
+# Netlify build settings for blog.theborggroup.com
+# Every deploy runs the SEO build step first, so each new post is added to
+# sitemap.xml and gets a clean canonical URL automatically.
+[build]
+  command = "node scripts/seo-build.mjs"
+  publish = "."
+
+# Serve the sitemap and robots file with the right content types.
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"

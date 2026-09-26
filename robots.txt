@@ -1,0 +1,6 @@
+# blog.theborggroup.com
+User-agent: *
+Allow: /
+Disallow: /scripts/
+
+Sitemap: https://blog.theborggroup.com/sitemap.xml
