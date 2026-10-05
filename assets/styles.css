@@ -164,61 +164,35 @@ html, body { overflow-x: hidden; }
 }
 
 /* --------------------------------------------------------------------------
-   Footer (canonical — reuse verbatim across every Borg Group property)
+   Footer (canonical — identical to communities.theborggroup.com)
+   Markup lives in scripts/footer.html and is applied to every page by
+   scripts/apply-footer.mjs on each deploy. Change it there, never per page.
    -------------------------------------------------------------------------- */
 
-.site-footer {
-  margin-top: var(--space-6);
-  background: var(--charcoal);
-  color: var(--silver);
-  padding: var(--space-5) var(--space-3) var(--space-3);
-}
-
-.site-footer__inner {
-  max-width: var(--col-wide);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  gap: var(--space-4);
-}
-
-@media (max-width: 640px) {
-  .site-footer__inner { grid-template-columns: 1fr; gap: var(--space-3); }
-}
-
-.site-footer h4 {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.72rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 var(--space-2);
-}
-
-.site-footer .wordmark { color: var(--cream); }
-.site-footer .wordmark span { color: var(--rose-muted); }
-
-.site-footer p, .site-footer li {
-  font-size: 0.875rem;
-  color: var(--silver);
-  line-height: 1.8;
-}
-
-.site-footer ul { list-style: none; margin: 0; padding: 0; }
-.site-footer a:hover { color: var(--rose-light); }
-
-.site-footer__bottom {
-  max-width: var(--col-wide);
-  margin: var(--space-4) auto 0;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--charcoal-soft);
-  font-size: 0.78rem;
-  color: var(--silver-dark);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-2);
+.tbgf { margin-top: var(--space-6); background-color: #1e1e1e; padding: 56px 40px 32px; font-family: 'Jost', sans-serif; }
+.tbgf * { box-sizing: border-box; margin: 0; padding: 0; }
+.tbgf-inner { max-width: 1240px; margin: 0 auto; }
+.tbgf-rule { width: 48px; height: 2px; background: #c4a55e; margin-bottom: 28px; }
+.tbgf-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #f5f0eb; margin-bottom: 4px; }
+.tbgf-sub { font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: #a89880; margin-bottom: 6px; }
+.tbgf-tagline { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: #c4a55e; font-weight: 500; margin-bottom: 32px; }
+.tbgf-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-bottom: 36px; }
+.tbgf-nav a { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c8bfb5; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.tbgf-nav a:hover { color: #c4a55e; }
+.tbgf-grid { display: flex; flex-wrap: wrap; gap: 24px 40px; margin-bottom: 32px; }
+.tbgf-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #c4a55e; margin-bottom: 6px; font-weight: 500; }
+.tbgf-val, .tbgf-val a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; line-height: 1.7; }
+.tbgf-val a:hover { color: #c4a55e; }
+.tbgf-serving { font-size: 0.76rem; color: #a89880; letter-spacing: 0.06em; line-height: 2; padding: 20px 0; border-top: 1px solid #2e2e2e; border-bottom: 1px solid #2e2e2e; margin-bottom: 24px; }
+.tbgf-serving strong { color: #c4a55e; font-weight: 500; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.tbgf-legal { font-size: 0.72rem; color: #8a8580; line-height: 1.9; margin-bottom: 20px; }
+.tbgf-legal a { color: #a89880; text-decoration: none; }
+.tbgf-legal a:hover { color: #c4a55e; }
+.tbgf-disclaimer { font-size: 0.7rem; color: #6f6a64; line-height: 1.85; font-style: italic; padding-top: 20px; border-top: 1px solid #2e2e2e; }
+.tbgf-disclaimer strong { font-style: normal; color: #c4a55e; font-weight: 500; letter-spacing: 0.12em; display: block; margin-bottom: 8px; font-size: 0.6rem; text-transform: uppercase; }
+@media (max-width: 700px) {
+  .tbgf { padding: 44px 24px 28px; }
+  .tbgf-grid { gap: 20px 28px; }
 }
 
 /* BorgBot slot — chat widget script mounts here sitewide, left empty on purpose */
