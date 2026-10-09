@@ -1,9 +1,10 @@
 # Netlify build settings for blog.theborggroup.com
 # Every deploy first applies the canonical footer + Information Disclaimer to every
-# page (scripts/footer.html is the single source), then runs the SEO build step so each
+# page (scripts/footer.html is the single source), then adds any new post to the homepage
+# and its category page (scripts/build-listings.mjs), then runs the SEO build step so each
 # new post is added to sitemap.xml and gets a clean canonical URL automatically.
 [build]
-  command = "node scripts/apply-footer.mjs && node scripts/seo-build.mjs"
+  command = "node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/seo-build.mjs"
   publish = "."
 
 # Serve the sitemap and robots file with the right content types.
