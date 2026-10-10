@@ -3,8 +3,11 @@
 # page (scripts/footer.html is the single source), then adds any new post to the homepage
 # and its category page (scripts/build-listings.mjs), then runs the SEO build step so each
 # new post is added to sitemap.xml and gets a clean canonical URL automatically.
+# Last, scripts/check-links.mjs looks for links that lead to "page not found" and lists
+# them in the deploy log as "WARNING: broken link ...". It only warns — it never stops a
+# deploy (the "|| true" guarantees that), so the daily post always publishes.
 [build]
-  command = "node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/seo-build.mjs"
+  command = "node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/seo-build.mjs && (node scripts/check-links.mjs || true)"
   publish = "."
 
 # Serve the sitemap and robots file with the right content types.
