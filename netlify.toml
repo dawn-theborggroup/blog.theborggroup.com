@@ -7,7 +7,7 @@
 # them in the deploy log as "WARNING: broken link ...". It only warns — it never stops a
 # deploy (the "|| true" guarantees that), so the daily post always publishes.
 [build]
-  command = "node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/seo-build.mjs && (node scripts/check-links.mjs || true)"
+  command = "node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/build-feed.mjs && node scripts/seo-build.mjs && (node scripts/check-links.mjs || true)"
   publish = "."
 
 # Serve the sitemap and robots file with the right content types.
@@ -20,3 +20,11 @@
   for = "/robots.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
+
+# Feed of the newest posts, read by the "Latest from the blog" block on www.theborggroup.com.
+[[headers]]
+  for = "/latest-posts.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=300"
