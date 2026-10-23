@@ -31,7 +31,15 @@ const decode = (s) =>
     .replace(/&quot;/g, '"')
     .replace(/&#x27;|&#39;|&apos;/g, "'")
     .replace(/&nbsp;/g, " ")
-    .replace(/&middot;/g, "·");
+    .replace(/&middot;/g, "·")
+    .replace(/&rsquo;/g, "\u2019")
+    .replace(/&lsquo;/g, "\u2018")
+    .replace(/&rdquo;/g, "\u201D")
+    .replace(/&ldquo;/g, "\u201C")
+    .replace(/&ndash;/g, "\u2013")
+    .replace(/&mdash;/g, "\u2014")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
 const encode = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const stripTags = (s) => decode(s.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
 
