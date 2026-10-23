@@ -4,7 +4,7 @@ Snapshot of the live site (GitHub repo dawn-theborggroup/blog.theborggroup.com, 
 Last deploy: Oct 20, 2026, 11:32 AM ET (commit 5735de0, "Point footer Search Homes link to the new map search URL", PR #47). 158 posts.
 
 ## Header (main menu): COPIED into every file
-There is no shared header template. The menu (nav.site-nav: Buy, Sell, Communities, Blog, Contact + phone; Contact points to /pages/contact-us) is written
+There is no shared header template. The menu (nav.site-nav: Buy, Sell, Communities, Blog, Contact + phone; Sell points to https://communities.theborggroup.com/widgets/sell-with-us/; Contact points to /pages/contact-us) is written
 into index.html, each category/*/index.html, and every posts/*.html (153+ files with the same block).
 To change a menu link, the same edit has to be made in every file (a find-and-replace across the folder
 does it; the menu text is identical in all pages except the Blog link, which is a relative path).
