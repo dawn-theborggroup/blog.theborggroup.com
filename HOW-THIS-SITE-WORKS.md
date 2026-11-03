@@ -51,3 +51,9 @@ Added Nov 3, 2026. The main menu's "Buy" link points here. Home search form subm
 TheBorgGroup.com's BoldTrail search (index.php?quick=1&display=...); "Create your free home
 search account" goes to theborggroup.com/login.php. Netlify form "buyer-search-alerts"
 collects custom-search requests (turn on email notifications in Netlify).
+
+## Netlify Forms
+Form detection was turned on for this project on Nov 3, 2026 (Project configuration -> Forms).
+Netlify only picks up new forms on a deploy that happens after detection is on. If a new form
+doesn't appear under Forms, trigger a fresh deploy.
+Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-alerts (/buy-with-us/).
