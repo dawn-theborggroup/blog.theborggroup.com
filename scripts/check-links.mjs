@@ -55,6 +55,7 @@ const pages = [
   ...listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)),
   ...listHtml("posts"),
   ...listHtml("resources"),
+  ...listHtml("buy-with-us"),
 ].filter(existsSync);
 
 const hostMatches = (host, base) => host === base || host.endsWith(`.${base}`);
