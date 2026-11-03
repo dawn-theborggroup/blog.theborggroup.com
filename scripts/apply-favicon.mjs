@@ -38,6 +38,7 @@ const pages = [
   ...listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)),
   ...listHtml("posts"),
   ...listHtml("resources"),
+  ...listHtml("buy-with-us"),
 ].filter(existsSync);
 
 let updated = 0;

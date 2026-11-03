@@ -29,6 +29,7 @@ const pages = [
   ...listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)),
   ...listHtml("posts"),
   ...listHtml("resources"),
+  ...listHtml("buy-with-us"),
 ].filter(existsSync);
 
 // Matches the older blog footer (site-footer) or a previously applied canonical footer (tbgf).
