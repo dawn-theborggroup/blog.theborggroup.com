@@ -37,6 +37,7 @@ const pages = [
   join(ROOT, "index.html"),
   ...listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)),
   ...listHtml("posts"),
+  ...listHtml("resources"),
 ].filter(existsSync);
 
 let updated = 0;
