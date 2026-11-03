@@ -39,7 +39,7 @@ function listHtml(dir) {
 const postFiles = listHtml("posts").sort();
 const categoryFiles = listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)).sort();
 const homeFile = join(ROOT, "index.html");
-const resourceFiles = listHtml("resources").filter((f) => f.endsWith(`${sep}index.html`)).sort();
+const resourceFiles = [...listHtml("resources"), ...listHtml("buy-with-us")].filter((f) => f.endsWith(`${sep}index.html`)).sort();
 const pages = [homeFile, ...categoryFiles, ...postFiles, ...resourceFiles].filter(existsSync);
 
 const postSlugs = new Set(postFiles.map((f) => f.split(sep).pop().replace(/\.html$/, "")));
@@ -95,7 +95,7 @@ for (const file of pages) {
   const modified =
     html.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})/)?.[1] ||
     html.match(/"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})/)?.[1];
-  sitemapEntries.push({ loc: canonical, lastmod: modified, isPost: rel.startsWith("posts/"), keepDate: rel.startsWith("resources/") });
+  sitemapEntries.push({ loc: canonical, lastmod: modified, isPost: rel.startsWith("posts/"), keepDate: rel.startsWith("resources/") || rel.startsWith("buy-with-us/") });
 }
 
 // Home and category pages change whenever a post is added: use the newest post date.

@@ -89,7 +89,7 @@
   <div class="site-header__inner">
     <a class='wordmark' href='/index.html'>The Borg Group<span>Live Where Life Feels Better</span></a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="https://communities.theborggroup.com/buyers/">Buy</a>
+      <a href="https://blog.theborggroup.com/buy-with-us/">Buy</a>
       <a href="https://communities.theborggroup.com/widgets/sell-with-us/">Sell</a>
       <a href="https://communities.theborggroup.com/">Communities</a>
       <a href='/index.html'>Blog</a>
@@ -236,7 +236,7 @@
 
 <div class="post-cta">
   <h3>Flood zone questions about a specific home?</h3>
-  <p>Mark and Dawn have helped Southwest Florida buyers and sellers through every storm season since 2005. Tell us the address and we'll tell you what the map doesn't. Call or text 239-350-4474.</p>
+  <p>Mark and Dawn have helped Southwest Florida buyers and sellers through every storm season since 2005. Tell us the address and we'll tell you what the map doesn't. Call or text <span class="nowrap">239-350-4474</span>.</p>
   <a class="btn" href="https://www.theborggroup.com/pages/contact-us">Talk to Mark &amp; Dawn</a>
 </div>
 
@@ -365,7 +365,7 @@
           return;
         }
         if (!d.zone) {
-          showError('We found ' + esc(d.place.matchedAddress) + ', but FEMA has no digital flood map for that exact spot. Try ' + femaLink(addr) + ', or call us at 239-350-4474.');
+          showError('We found ' + esc(d.place.matchedAddress) + ', but FEMA has no digital flood map for that exact spot. Try ' + femaLink(addr) + ', or call us at <span class="nowrap">239-350-4474</span>.');
           return;
         }
         render(d, addr);
