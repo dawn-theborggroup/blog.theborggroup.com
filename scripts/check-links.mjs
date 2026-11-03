@@ -54,6 +54,7 @@ const pages = [
   join(ROOT, "index.html"),
   ...listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)),
   ...listHtml("posts"),
+  ...listHtml("resources"),
 ].filter(existsSync);
 
 const hostMatches = (host, base) => host === base || host.endsWith(`.${base}`);

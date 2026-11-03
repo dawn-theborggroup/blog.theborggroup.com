@@ -28,6 +28,7 @@ const pages = [
   join(ROOT, "index.html"),
   ...listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)),
   ...listHtml("posts"),
+  ...listHtml("resources"),
 ].filter(existsSync);
 
 // Matches the older blog footer (site-footer) or a previously applied canonical footer (tbgf).

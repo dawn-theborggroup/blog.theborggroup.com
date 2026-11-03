@@ -39,7 +39,8 @@ function listHtml(dir) {
 const postFiles = listHtml("posts").sort();
 const categoryFiles = listHtml("category").filter((f) => f.endsWith(`${sep}index.html`)).sort();
 const homeFile = join(ROOT, "index.html");
-const pages = [homeFile, ...categoryFiles, ...postFiles].filter(existsSync);
+const resourceFiles = listHtml("resources").filter((f) => f.endsWith(`${sep}index.html`)).sort();
+const pages = [homeFile, ...categoryFiles, ...postFiles, ...resourceFiles].filter(existsSync);
 
 const postSlugs = new Set(postFiles.map((f) => f.split(sep).pop().replace(/\.html$/, "")));
 
@@ -94,12 +95,12 @@ for (const file of pages) {
   const modified =
     html.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})/)?.[1] ||
     html.match(/"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})/)?.[1];
-  sitemapEntries.push({ loc: canonical, lastmod: modified, isPost: rel.startsWith("posts/") });
+  sitemapEntries.push({ loc: canonical, lastmod: modified, isPost: rel.startsWith("posts/"), keepDate: rel.startsWith("resources/") });
 }
 
 // Home and category pages change whenever a post is added: use the newest post date.
 const newest = sitemapEntries.filter((e) => e.isPost && e.lastmod).map((e) => e.lastmod).sort().pop();
-for (const e of sitemapEntries) if (!e.isPost && newest) e.lastmod = newest;
+for (const e of sitemapEntries) if (!e.isPost && !e.keepDate && newest) e.lastmod = newest;
 
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +

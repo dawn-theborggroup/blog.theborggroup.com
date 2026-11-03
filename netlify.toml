@@ -7,6 +7,7 @@
 # them in the deploy log as "WARNING: broken link ...". It only warns — it never stops a
 # deploy (the "|| true" guarantees that), so the daily post always publishes.
 [build]
+  functions = "netlify/functions"
   command = "node scripts/apply-favicon.mjs && node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/build-feed.mjs && node scripts/seo-build.mjs && (node scripts/check-links.mjs || true)"
   publish = "."
 

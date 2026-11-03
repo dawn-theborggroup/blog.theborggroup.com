@@ -4,7 +4,7 @@ Snapshot of the live site (GitHub repo dawn-theborggroup/blog.theborggroup.com, 
 Last deploy: Oct 20, 2026, 11:32 AM ET (commit 5735de0, "Point footer Search Homes link to the new map search URL", PR #47). 158 posts.
 
 ## Header (main menu): COPIED into every file
-There is no shared header template. The menu (nav.site-nav: Buy, Sell, Communities, Blog, Contact + phone; Sell points to https://communities.theborggroup.com/widgets/sell-with-us/; Contact points to /pages/contact-us) is written
+There is no shared header template. The menu (nav.site-nav: Buy, Sell, Communities, Blog, Resources, Contact + phone; Sell points to https://communities.theborggroup.com/widgets/sell-with-us/; Contact points to /pages/contact-us) is written
 into index.html, each category/*/index.html, and every posts/*.html (153+ files with the same block).
 To change a menu link, the same edit has to be made in every file (a find-and-replace across the folder
 does it; the menu text is identical in all pages except the Blog link, which is a relative path).
@@ -32,3 +32,16 @@ Publish directory is the repo root (".").
 ## Not included
 No _redirects file exists yet: the old BoldTrail URL redirects were never set up
 (the old URLs are still live on BoldTrail).
+
+## Resources (free tools): /resources/
+Added Nov 3, 2026. Each tool is its own folder with an index.html, so URLs are clean
+(e.g. /resources/flood-zone-lookup/). The hub is resources/index.html.
+- Shared tool styles: assets/tools.css (loaded after assets/styles.css).
+- The footer, favicon, sitemap and link-check steps include every page under /resources/.
+- Server-side code lives in netlify/functions/ (netlify.toml sets the folder).
+  flood-zone.mjs answers /api/flood-zone?address=... : U.S. Census geocoder -> FEMA National
+  Flood Hazard Layer. Free public services, no API keys.
+- Lead forms use Netlify Forms (form "flood-report"). Email notifications are set in the
+  Netlify dashboard: Forms -> flood-report -> Form notifications.
+- To add a tool: copy resources/flood-zone-lookup/index.html as a starting point, then switch
+  its hub tile in resources/index.html from "Coming soon" to a link and add it to the hub's ItemList.
