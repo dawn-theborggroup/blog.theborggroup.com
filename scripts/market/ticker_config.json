@@ -125,7 +125,25 @@
    "id": "beaches",
    "soldDays": 45,
    "label": "Bonita & Fort Myers Beach",
-   "url": "https://communities.theborggroup.com/bonita-beach/"
+   "url": "https://communities.theborggroup.com/bonita-beach/",
+   "split": [
+    {
+     "id": "bonita-beach",
+     "label": "Bonita Beach",
+     "url": "https://communities.theborggroup.com/bonita-beach/",
+     "zips": [
+      "34134"
+     ]
+    },
+    {
+     "id": "fort-myers-beach",
+     "label": "Fort Myers Beach",
+     "url": "https://blog.theborggroup.com/resources/southwest-florida-housing-market/#fort-myers-beach",
+     "zips": [
+      "33931"
+     ]
+    }
+   ]
   },
   {
    "name": "Estero",
