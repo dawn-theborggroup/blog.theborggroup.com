@@ -119,6 +119,17 @@
   table.items td small { display: block; font-size: .78rem; color: var(--silver-dark); }
   table.items tr.sub td { font-weight: 500; color: var(--charcoal); border-bottom: 2px solid var(--charcoal); }
   table.items tr.credit td:last-child { color: #2f6b4f; }
+  .est-note { margin-top: .35rem; font-size: .76rem; color: var(--silver); font-style: italic; }
+  .send-box { margin-top: var(--space-3); padding: var(--space-3); border: 1px solid var(--rose-muted); border-radius: 2px; background: var(--white); }
+  .send-box h3 { font-size: 1.3rem; margin: 0 0 .3rem; }
+  .send-box p { margin: 0 0 var(--space-2); font-size: .93rem; }
+  .send-grid { display: grid; gap: .75rem; grid-template-columns: 1fr 1fr; }
+  .send-grid .full { grid-column: 1 / -1; }
+  @media (max-width: 560px) { .send-grid { grid-template-columns: 1fr; } }
+  .send-how { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: .92rem; }
+  .send-how label { display: flex; gap: .45rem; align-items: center; cursor: pointer; }
+  .send-how input { accent-color: var(--dusty-rose); width: 1rem; height: 1rem; }
+  .send-err { color: #9b3d2e; font-size: .85rem; margin: .5rem 0 0; }
   .sticky-net { display: none; }
   @media (max-width: 760px) {
     .sticky-net { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1.1rem; background: var(--charcoal); color: var(--cream); box-shadow: 0 -8px 24px -12px rgba(0,0,0,.5); transform: translateY(110%); transition: transform .25s ease; }
@@ -260,6 +271,7 @@
       <div class="k">Estimated net proceeds</div>
       <div class="big" id="o-net">$0</div>
       <div class="small" id="o-sub"></div>
+      <div class="small est-note">Estimate only. Your title company's closing statement will have the final numbers.</div>
     </div>
     <div>
       <div class="bar" aria-hidden="true"><span class="b-net" id="b-net"></span><span class="b-pay" id="b-pay"></span><span class="b-cost" id="b-cost"></span></div>
@@ -273,6 +285,42 @@
   <div class="tool-actions">
     <a class="btn" href="tel:+12393504474">Call or Text 239-350-4474</a>
     <button class="btn btn--ghost" type="button" id="net-print">Print or Save as PDF</button>
+  </div>
+
+  <div class="send-box" id="send">
+    <h3>Email or text this estimate to yourself</h3>
+    <p>Keep your numbers handy for later. We'll send you this itemized estimate, and you can come back and adjust it anytime.</p>
+    <form name="net-sheet-send" id="send-form" method="POST" action="/resources/seller-net-sheet/" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="net-sheet-send">
+      <input type="hidden" name="send_by" id="s-sendby">
+      <input type="hidden" name="county" id="s-county">
+      <input type="hidden" name="sale_price" id="s-price">
+      <input type="hidden" name="estimated_net" id="s-netval">
+      <input type="hidden" name="estimate_details" id="s-details">
+      <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <div class="send-grid">
+        <div class="full send-how" role="group" aria-label="How should we send it?">
+          <label><input type="checkbox" id="s-byemail" checked> Email it to me</label>
+          <label><input type="checkbox" id="s-bytext"> Text it to me</label>
+        </div>
+        <div>
+          <label class="tool-label" for="s-name">First name</label>
+          <input class="tool-input" id="s-name" name="name" type="text" autocomplete="given-name">
+        </div>
+        <div id="s-email-wrap">
+          <label class="tool-label" for="s-email">Email</label>
+          <input class="tool-input" id="s-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div id="s-phone-wrap" hidden>
+          <label class="tool-label" for="s-phone">Mobile number</label>
+          <input class="tool-input" id="s-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="full"><button class="btn" type="submit" id="send-go">Send My Estimate</button></div>
+      </div>
+      <p class="send-err" id="send-err" hidden></p>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email or text about your estimate and your home. Message and data rates may apply. Reply STOP to opt out of texts. We never sell or share your information.</p>
+    </form>
+    <p class="report-thanks" id="send-thanks" hidden>Sent! Check your inbox or messages in the next few minutes. Mark or Dawn may also reach out to answer any questions.</p>
   </div>
 
   <div class="report-box">
@@ -460,6 +508,17 @@
     if (net < 0 && price) warn = 'Your payoffs and costs are higher than the sale price. That’s called a short sale, and it has its own process. Call us at 239-350-4474 to talk through options.';
     $('o-warn').hidden = !warn; $('o-warn').textContent = warn;
 
+    $('s-county').value = county === 'lee' ? 'Lee County' : 'Collier County';
+    $('s-price').value = money(price);
+    $('s-netval').value = money(net);
+    var det = ['Sale price: ' + money(price)];
+    if (num('n-loan1')) det.push('Mortgage payoff: -' + money(num('n-loan1')));
+    if (num('n-loan2')) det.push('Second mortgage / HELOC: -' + money(num('n-loan2')));
+    lines.forEach(function (l) { det.push(l[0] + ': ' + (l[2] < 0 ? '+' + money(-l[2]) : '-' + money(l[2]))); });
+    det.push('Total selling costs: -' + money(costs));
+    det.push('Estimated net proceeds: ' + money(net));
+    det.push('Closing date: ' + ($('n-close').value || 'not set') + ' | ' + $('s-county').value);
+    $('s-details').value = det.join('\n');
     $('f-summary').value = (county === 'lee' ? 'Lee' : 'Collier') + ' County | Price ' + money(price) + ' | Payoffs ' + money(payoffs) + ' | Costs ' + money(costs) + ' | Est. net ' + money(net);
   }
 
@@ -487,6 +546,41 @@
   var tracked = false;
   $('net-form').addEventListener('input', function () { if (!tracked && window.gtag) { tracked = true; gtag('event', 'net_sheet_used'); } });
   $('net-print').addEventListener('click', function () { window.print(); });
+
+  function syncHow() {
+    $('s-email-wrap').hidden = !$('s-byemail').checked;
+    $('s-phone-wrap').hidden = !$('s-bytext').checked;
+  }
+  $('s-byemail').addEventListener('change', syncHow);
+  $('s-bytext').addEventListener('change', syncHow);
+
+  $('send-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, err = $('send-err');
+    var byE = $('s-byemail').checked, byT = $('s-bytext').checked;
+    var email = $('s-email').value.trim(), phone = $('s-phone').value.replace(/[^0-9]/g, '');
+    var msg = '';
+    if (!byE && !byT) msg = 'Choose email, text, or both.';
+    else if (byE && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) msg = 'Please enter a valid email address.';
+    else if (byT && phone.length < 10) msg = 'Please enter a 10-digit mobile number.';
+    if (msg) { err.textContent = msg; err.hidden = false; return; }
+    err.hidden = true;
+    if (!byE) $('s-email').value = '';
+    if (!byT) $('s-phone').value = '';
+    calc();
+    $('s-sendby').value = byE && byT ? 'Email and text' : (byE ? 'Email' : 'Text');
+    var btn = $('send-go'); btn.disabled = true; btn.textContent = 'Sending\u2026';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        f.hidden = true; $('send-thanks').hidden = false;
+        if (window.gtag) gtag('event', 'generate_lead', { form: 'net-sheet-send', send_by: $('s-sendby').value });
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Send My Estimate';
+        err.textContent = 'Sorry, that didn\u2019t go through. Please call or text us at 239-350-4474.'; err.hidden = false;
+      });
+  });
 
   $('report-form').addEventListener('submit', function (e) {
     e.preventDefault();
