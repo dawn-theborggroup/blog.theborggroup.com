@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage &amp; Affordability Calculator for Southwest Florida (Amendment 3 Ready) | The Borg Group</title>
+<meta name="description" content="How much house can you afford in Southwest Florida? Estimate your full monthly payment in Lee or Collier County, including property taxes with Florida's new Amendment 3 homestead exemption, insurance, HOA and CDD fees.">
+<link rel="canonical" href="https://blog.theborggroup.com/resources/mortgage-affordability-calculator/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/tools.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8YTWVXK2J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q8YTWVXK2J');
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a.btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'contact_click', {'link_text': btn.textContent.trim(),'link_url': btn.getAttribute('href'),'page_path': window.location.pathname,'page_title': document.title});
+      });
+    });
+  });
+</script>
+
+<meta property="og:title" content="Mortgage &amp; Affordability Calculator for Southwest Florida">
+<meta property="og:description" content="Your real monthly payment in Lee or Collier County: principal, interest, property taxes with Amendment 3, insurance, HOA and CDD fees.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.theborggroup.com/resources/mortgage-affordability-calculator/">
+<meta property="og:image" content="https://blog.theborggroup.com/assets/images/house-keychain-beach.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage &amp; Affordability Calculator for Southwest Florida">
+<meta name="twitter:description" content="How much house can you afford in Southwest Florida once taxes, insurance and HOA fees are counted in?">
+<meta name="twitter:image" content="https://blog.theborggroup.com/assets/images/house-keychain-beach.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Southwest Florida Mortgage & Affordability Calculator",
+  "url": "https://blog.theborggroup.com/resources/mortgage-affordability-calculator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free calculator that estimates the full monthly cost of buying a home in Lee or Collier County, Florida, including principal and interest, property taxes under Florida's 2026 Amendment 3 homestead exemption, homeowners and flood insurance, HOA and CDD fees and mortgage insurance, plus the price range a household income can comfortably support.",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Lee County, Florida" },
+    { "@type": "AdministrativeArea", "name": "Collier County, Florida" }
+  ],
+  "provider": { "@id": "https://www.theborggroup.com/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.theborggroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://blog.theborggroup.com/resources/" },
+    { "@type": "ListItem", "position": 3, "name": "Mortgage & Affordability Calculator", "item": "https://blog.theborggroup.com/resources/mortgage-affordability-calculator/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much house can I afford in Southwest Florida?", "acceptedAnswer": { "@type": "Answer", "text": "Many lenders look for your total monthly debts, including the new house payment, to stay around 36% of your gross monthly income, and some programs allow up to about 43% or more. In Southwest Florida, the house payment should include property taxes, homeowners and flood insurance, and HOA or CDD fees, not just principal and interest, because those costs can add hundreds or thousands of dollars a month." } },
+    { "@type": "Question", "name": "How does Florida's Amendment 3 change my mortgage payment?", "acceptedAnswer": { "@type": "Answer", "text": "Amendment 3, approved by Florida voters on November 3, 2026, raises the homestead exemption on non-school property taxes to $150,000 in 2027 and $250,000 in 2028 for a primary residence. That lowers the property tax part of a homeowner's monthly payment. School taxes are not affected, and people who become Florida residents after December 31, 2026 first receive the current exemption, with the larger one starting in their fifth year." } },
+    { "@type": "Question", "name": "Why shouldn't I use the seller's property tax bill to estimate my payment?", "acceptedAnswer": { "@type": "Answer", "text": "In Florida, a home's assessed value generally resets to market value after a sale. A long-time owner's bill may reflect years of Save Our Homes caps and exemptions that don't transfer to you, so your taxes can be much higher than the seller's. Estimate your taxes from the purchase price instead." } },
+    { "@type": "Question", "name": "What is a CDD fee in Florida?", "acceptedAnswer": { "@type": "Answer", "text": "A Community Development District (CDD) is a special taxing district that pays for a community's roads, utilities and amenities. Its fees appear on the property tax bill and are common in newer Estero, Fort Myers and Naples communities. They are separate from HOA dues, so include both when comparing homes." } }
+  ]
+}
+</script>
+<style>
+  .calc-grid { display: grid; gap: .9rem 1rem; grid-template-columns: 1fr 1fr; }
+  .calc-grid .full { grid-column: 1 / -1; }
+  @media (max-width: 560px) { .calc-grid { grid-template-columns: 1fr; } }
+  .calc-section { grid-column: 1 / -1; font-family: var(--font-display); font-size: 1.15rem; color: var(--charcoal); margin: .9rem 0 -.2rem; padding-top: .9rem; border-top: 1px solid var(--silver-light); }
+  .calc-section:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+  .money { position: relative; }
+  .money::before { content: "$"; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--silver-dark); pointer-events: none; }
+  .money .tool-input { padding-left: 1.8rem; }
+  .pct { position: relative; }
+  .pct::after { content: "%"; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--silver-dark); pointer-events: none; }
+  .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--silver); border-radius: 999px; padding: 3px; background: var(--cream); }
+  .seg button { font: inherit; font-size: .9rem; border: 0; background: transparent; padding: .5rem 1.1rem; border-radius: 999px; cursor: pointer; color: var(--charcoal); }
+  .seg button[aria-pressed="true"] { background: var(--charcoal); color: var(--cream); }
+  .mode-tabs { margin-bottom: var(--space-3); }
+  .mode-tabs .seg { display: grid; grid-template-columns: 1fr 1fr; max-width: 420px; width: 100%; }
+  .mode-tabs .seg button { padding: .6rem .8rem; white-space: nowrap; }
+  @media (max-width: 400px) { .mode-tabs .seg button { font-size: .84rem; padding: .6rem .4rem; } }
+  .chk-line { display: flex; gap: .6rem; align-items: flex-start; font-size: .92rem; line-height: 1.5; cursor: pointer; }
+  .chk-line input { margin-top: .3rem; accent-color: var(--dusty-rose); width: 1rem; height: 1rem; flex: none; }
+  .hint { font-size: .78rem; color: var(--silver-dark); margin: .35rem 0 0; line-height: 1.45; }
+  .row-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  [hidden] { display: none !important; }
+
+  .net-hero { margin-top: var(--space-4); padding: var(--space-3); background: var(--charcoal); color: var(--cream); border-radius: 2px; display: grid; gap: var(--space-2); }
+  @media (min-width: 640px) { .net-hero { grid-template-columns: 1.2fr 1fr; align-items: center; } }
+  .net-hero .k { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--rose-muted); }
+  .net-hero .big { font-family: var(--font-display); font-size: clamp(2.3rem, 7vw, 3.2rem); line-height: 1.05; color: #fff; }
+  .net-hero .small { font-size: .88rem; color: var(--silver); }
+  .bar { height: 14px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; display: flex; }
+  .bar span { display: block; height: 100%; }
+  .legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .78rem; color: var(--silver); margin-top: .55rem; }
+  .legend i { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; margin-right: .35rem; vertical-align: -.05rem; }
+  .warn { margin-top: var(--space-2); font-size: .9rem; background: var(--cream-warm); border-left: 3px solid var(--dusty-rose); padding: .75rem 1rem; }
+  .a3 { margin-top: var(--space-2); font-size: .9rem; background: #fff; border: 1px solid var(--silver-light); border-left: 3px solid var(--gold); padding: .75rem 1rem; line-height: 1.55; }
+  .a3 strong { color: var(--charcoal); }
+
+  table.items { width: 100%; border-collapse: collapse; margin-top: var(--space-3); font-size: .95rem; }
+  table.items td { padding: .6rem 0; border-bottom: 1px solid var(--silver-light); vertical-align: top; }
+  table.items td:last-child { text-align: right; white-space: nowrap; padding-left: 1rem; color: var(--charcoal); }
+  table.items td small { display: block; font-size: .78rem; color: var(--silver-dark); }
+  table.items tr.total td { font-family: var(--font-display); font-size: 1.35rem; color: var(--charcoal); border-bottom: 0; border-top: 2px solid var(--charcoal); padding-top: .9rem; }
+  .est-note { margin-top: .35rem; font-size: .76rem; color: var(--silver); font-style: italic; }
+  .sticky-net { display: none; }
+  @media (max-width: 760px) {
+    .sticky-net { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1.1rem; background: var(--charcoal); color: var(--cream); box-shadow: 0 -8px 24px -12px rgba(0,0,0,.5); transform: translateY(110%); transition: transform .25s ease; }
+    .sticky-net.show { transform: none; }
+    .sticky-net .k { font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose-muted); }
+    .sticky-net .v { font-family: var(--font-display); font-size: 1.5rem; color: #fff; line-height: 1.1; }
+    .sticky-net a { font-size: .8rem; color: var(--rose-light); border-bottom: 1px solid var(--rose); white-space: nowrap; }
+  }
+  @media print { .sticky-net, .send-box, .mode-tabs { display: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class='wordmark' href='/index.html'>The Borg Group<span>Live Where Life Feels Better</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="https://blog.theborggroup.com/buy-with-us/">Buy</a>
+      <a href="https://communities.theborggroup.com/widgets/sell-with-us/">Sell</a>
+      <a href="https://communities.theborggroup.com/">Communities</a>
+      <a href='/index.html'>Blog</a>
+      <a aria-current="page" href="https://blog.theborggroup.com/resources/">Resources</a>
+      <a href="https://www.theborggroup.com/pages/contact-us">Contact</a>
+      <a class="nav-phone" href="tel:+12393504474">239-350-4474</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/index.html">Blog</a><span>/</span><a href="/resources/">Resources</a><span>/</span>Mortgage &amp; Affordability Calculator
+</nav>
+
+<header class="post-header">
+  <p class="eyebrow">Resources &middot; Free Tool</p>
+  <hr class="rule">
+  <h1>How much house can you really afford in Southwest Florida?</h1>
+  <p>Most mortgage calculators stop at principal and interest. In Southwest Florida, that's only part of the payment. Property taxes, homeowners and flood insurance, HOA dues and CDD fees can add hundreds or even thousands of dollars a month. This calculator counts all of it, for Lee and Collier County, with Florida's new Amendment 3 homestead exemption built in. No email required.</p>
+</header>
+
+<section class="tool-card" id="calc" aria-labelledby="tool-title">
+  <h2 id="tool-title">Mortgage &amp; Affordability Calculator</h2>
+  <p class="tool-sub">Built for Southwest Florida: Lee and Collier County tax rates, Amendment 3 homestead savings, and the costs national calculators leave out</p>
+
+  <div class="mode-tabs">
+    <div class="seg" role="group" aria-label="What do you want to know?">
+      <button type="button" data-mode="pay" aria-pressed="true">My monthly payment</button>
+      <button type="button" data-mode="afford" aria-pressed="false">What can I afford?</button>
+    </div>
+  </div>
+
+  <form class="tool-form" id="m-form" novalidate onsubmit="return false">
+    <div class="calc-grid">
+      <p class="calc-section">The home</p>
+      <div class="full">
+        <span class="tool-label">County</span>
+        <div class="seg" role="group" aria-label="County">
+          <button type="button" data-county="lee" aria-pressed="true">Lee County</button>
+          <button type="button" data-county="collier" aria-pressed="false">Collier County</button>
+        </div>
+        <p class="hint">Lee: Fort Myers, Fort Myers Beach, Cape Coral, Bonita Springs, Estero. Collier: Naples, Marco Island.</p>
+      </div>
+      <div class="pay-only">
+        <label class="tool-label" for="m-price">Home price</label>
+        <div class="money"><input class="tool-input" id="m-price" inputmode="numeric" value="550,000"></div>
+      </div>
+      <div class="pay-only">
+        <label class="tool-label" for="m-downpct">Down payment</label>
+        <div class="row-pair">
+          <div class="pct"><input class="tool-input" id="m-downpct" inputmode="decimal" value="20" aria-label="Down payment percent"></div>
+          <div class="money"><input class="tool-input" id="m-down" inputmode="numeric" value="110,000" aria-label="Down payment dollars"></div>
+        </div>
+      </div>
+
+      <p class="calc-section afford-only" hidden>Your budget</p>
+      <div class="afford-only" hidden>
+        <label class="tool-label" for="m-income">Household income (yearly, before taxes)</label>
+        <div class="money"><input class="tool-input" id="m-income" inputmode="numeric" value="150,000"></div>
+      </div>
+      <div class="afford-only" hidden>
+        <label class="tool-label" for="m-debts">Monthly debt payments</label>
+        <div class="money"><input class="tool-input" id="m-debts" inputmode="numeric" value="600"></div>
+        <p class="hint">Car loans, student loans, credit card minimums. Not rent or utilities.</p>
+      </div>
+      <div class="afford-only" hidden>
+        <label class="tool-label" for="m-cash">Cash for your down payment</label>
+        <div class="money"><input class="tool-input" id="m-cash" inputmode="numeric" value="100,000"></div>
+        <p class="hint">Keep enough aside for closing costs, usually 2% to 4% of the price for buyers.</p>
+      </div>
+
+      <p class="calc-section">The loan</p>
+      <div>
+        <label class="tool-label" for="m-rate">Interest rate</label>
+        <div class="pct"><input class="tool-input" id="m-rate" inputmode="decimal" value="7.24"></div>
+        <p class="hint">Freddie Mac's national 30-year average was 7.24% on October 29, 2026. Your rate depends on your credit, loan type and points.</p>
+      </div>
+      <div>
+        <span class="tool-label">Loan term</span>
+        <div class="seg" role="group" aria-label="Loan term">
+          <button type="button" data-term="30" aria-pressed="true">30 years</button>
+          <button type="button" data-term="15" aria-pressed="false">15 years</button>
+        </div>
+      </div>
+
+      <p class="calc-section">Property taxes &amp; Amendment 3</p>
+      <div class="full">
+        <label class="chk-line"><input type="checkbox" id="m-home" checked> <span>This will be my primary residence (homestead)</span></label>
+      </div>
+      <div class="hs-only">
+        <label class="tool-label" for="m-res">Florida resident since</label>
+        <select class="tool-input" id="m-res">
+          <option value="by2026" selected>2026 or earlier</option>
+          <option value="after">2027 or later</option>
+        </select>
+        <p class="hint">Residents as of Dec. 31, 2026 get the larger exemption right away.</p>
+      </div>
+      <div class="hs-only">
+        <label class="tool-label" for="m-year">Tax year</label>
+        <select class="tool-input" id="m-year">
+          <option value="2027" selected>2027 ($150,000 exemption)</option>
+          <option value="2028">2028+ ($250,000 exemption)</option>
+        </select>
+      </div>
+      <div class="full">
+        <label class="tool-label" for="m-mills">Total millage rate (optional)</label>
+        <input class="tool-input" id="m-mills" inputmode="decimal" placeholder="Leave blank to use the county average">
+        <p class="hint" id="mills-note"></p>
+      </div>
+
+      <p class="calc-section">Insurance &amp; community fees</p>
+      <div>
+        <label class="tool-label" for="m-hoi">Homeowners insurance (yearly)</label>
+        <div class="money"><input class="tool-input" id="m-hoi" inputmode="numeric" value="5,000"></div>
+        <p class="hint">A placeholder. Quotes vary widely with the home's age, roof and wind mitigation.</p>
+      </div>
+      <div>
+        <label class="tool-label" for="m-flood">Flood insurance (yearly)</label>
+        <div class="money"><input class="tool-input" id="m-flood" inputmode="numeric" value="0"></div>
+        <p class="hint">Check the home with our <a href="/resources/flood-zone-lookup/">Flood Zone Lookup</a>.</p>
+      </div>
+      <div>
+        <label class="tool-label" for="m-hoa">HOA / condo dues (monthly)</label>
+        <div class="money"><input class="tool-input" id="m-hoa" inputmode="numeric" value="0"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="m-cdd">CDD fee (yearly)</label>
+        <div class="money"><input class="tool-input" id="m-cdd" inputmode="numeric" value="0"></div>
+        <p class="hint">Common in newer Estero, Fort Myers and Naples communities.</p>
+      </div>
+    </div>
+  </form>
+
+  <div class="net-hero" aria-live="polite">
+    <div>
+      <div class="k" id="o-k">Estimated monthly payment</div>
+      <div class="big" id="o-big">$0</div>
+      <div class="small" id="o-sub"></div>
+      <div class="small est-note">Estimate only. Your lender's Loan Estimate will have your actual numbers.</div>
+    </div>
+    <div>
+      <div class="bar" aria-hidden="true" id="o-bar"></div>
+      <div class="legend" id="o-legend"></div>
+    </div>
+  </div>
+  <div class="a3" id="o-a3" hidden></div>
+  <div class="warn" id="o-warn" hidden></div>
+
+  <table class="items" id="o-items" aria-label="Monthly payment breakdown"></table>
+
+  <div class="tool-actions">
+    <a class="btn" href="tel:+12393504474">Call or Text 239-350-4474</a>
+    <button class="btn btn--ghost" type="button" id="m-print">Print or Save as PDF</button>
+  </div>
+
+  <div class="send-box" id="send">
+    <h3>Email this estimate to yourself</h3>
+    <p>Keep your numbers handy while you shop. We'll send you this breakdown, and you can come back and adjust it anytime.</p>
+    <form name="mortgage-send" id="send-form" method="POST" action="/resources/mortgage-affordability-calculator/" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="mortgage-send">
+      <input type="hidden" name="send_by" id="s-sendby">
+      <input type="hidden" name="county" id="s-county">
+      <input type="hidden" name="calculator_mode" id="s-mode">
+      <input type="hidden" name="headline" id="s-headline">
+      <input type="hidden" name="estimate_details" id="s-details">
+      <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <div class="send-grid">
+        <div class="full send-how" role="group" aria-label="Text me too">
+          <input type="checkbox" id="s-byemail" checked hidden>
+          <label><input type="checkbox" id="s-bytext"> Also text me when it's on the way</label>
+        </div>
+        <div>
+          <label class="tool-label" for="s-name">First name</label>
+          <input class="tool-input" id="s-name" name="name" type="text" autocomplete="given-name">
+        </div>
+        <div id="s-email-wrap">
+          <label class="tool-label" for="s-email">Email</label>
+          <input class="tool-input" id="s-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div id="s-phone-wrap" hidden>
+          <label class="tool-label" for="s-phone">Mobile number</label>
+          <input class="tool-input" id="s-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="full"><button class="btn" type="submit" id="send-go">Send My Estimate</button></div>
+      </div>
+      <p class="send-err" id="send-err" hidden></p>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email, and by text (including automated texts) if you check the box, about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
+    </form>
+    <p class="report-thanks" id="send-thanks" hidden>Sent! Check your inbox in the next few minutes (and your spam folder, just in case).</p>
+  </div>
+</section>
+
+<div class="sticky-net" id="sticky-net" aria-hidden="true"><div><div class="k" id="st-k">Monthly payment</div><div class="v" id="st-v">$0</div></div><a href="#o-items">See the breakdown</a></div>
+
+<p class="tool-disclaimer">This calculator provides information and knowledge only: an estimate for planning purposes. It is not a loan offer, a pre-approval, or legal, tax or financial advice. Property taxes use county-average 2025 millage rates from Florida TaxWatch (Lee about 15.97 mills, Collier about 11.05 mills) applied to the purchase price; your actual rate depends on the city, fire district and special districts, and the property appraiser's assessed value may differ from the price. Amendment 3 figures reflect the measure as approved by voters on November 3, 2026 (results unofficial until certified) and may be affected by implementing legislation. Insurance, HOA and CDD amounts are what you enter. Mortgage insurance is estimated at 0.5% of the loan per year when less than 20% is put down. Affordability ranges use common lending guidelines (28% of income for housing and 36% for all debts; 43% for the stretch figure). Lenders' requirements vary.</p>
+
+<article class="post-body">
+
+  <div class="quick-answer">
+    <p class="eyebrow">Quick Answer</p>
+    <p>A Southwest Florida mortgage payment is more than principal and interest. Add property taxes (about 16 mills in Lee County and 11 mills in Collier on average), homeowners insurance, flood insurance in many areas, and HOA or CDD fees. Many lenders want your total monthly debts, including that full payment, to stay around 36% of your gross income. Starting in 2027, Florida's Amendment 3 lowers property taxes on a primary residence by raising the homestead exemption on non-school taxes to $150,000, then $250,000 in 2028.</p>
+  </div>
+
+  <h2>How does Amendment 3 change my monthly payment?</h2>
+  <p>Florida voters approved Amendment 3 on November 3, 2026. For a home you live in as your primary residence, the homestead exemption on non-school property taxes rises from about $51,411 today to $150,000 on January 1, 2027 and $250,000 on January 1, 2028, with inflation adjustments after that. Non-school taxes (county, city, fire and other districts) are more than half of a typical Southwest Florida bill, and about two-thirds in Lee County, so the savings can be real. On a $550,000 Lee County home at the county-average rate, that's about $1,000 a year in 2027 and about $2,100 a year starting in 2028. Toggle the year above to see your own numbers.</p>
+  <p>Three things to know before you count on it. School taxes don't change, so your bill doesn't drop to zero. Second homes, rentals and investment properties don't get the larger exemption (their yearly assessment cap drops from 10% to 5% instead). And if you become a Florida resident on or after January 1, 2027, you start with the current exemption and receive the larger one in your fifth year. Read our full breakdown of <a href="/posts/florida-amendment-3-passed-southwest-florida-homeowners.html">what Amendment 3 means for Southwest Florida homeowners</a>.</p>
+
+  <h2>Why shouldn't I use the seller's tax bill?</h2>
+  <p>Because it probably isn't your tax bill. In Florida, a home's assessed value generally resets to market value after a sale. A long-time owner's bill may reflect years of Save Our Homes caps and exemptions that don't transfer to you. We see buyers budget from the seller's bill and get surprised by a much larger first bill. This calculator estimates from the purchase price instead. Learn how to read the <a href="/posts/trim-notice-southwest-florida-guide.html">TRIM notice</a> you'll get each August.</p>
+
+  <h2>Why is insurance such a big part of the payment here?</h2>
+  <p>Homeowners insurance in coastal Florida costs more than in most of the country, and flood insurance is required by lenders in high-risk flood zones (and increasingly by Citizens). Two similar homes can have very different premiums because of roof age, construction, wind mitigation features and elevation. That's why we leave insurance as something you enter rather than guess. See our guides to <a href="/posts/homeowners-insurance-bonita-springs.html">homeowners insurance</a> and <a href="/posts/four-point-wind-mitigation-inspections-florida.html">wind mitigation inspections</a>, and check any address with our <a href="/resources/flood-zone-lookup/">Flood Zone Lookup</a>.</p>
+
+  <h2>What's the difference between HOA dues and a CDD fee?</h2>
+  <p>HOA or condo dues pay your community association for things like landscaping, amenities and reserves. A CDD (Community Development District) is a special taxing district that financed the community's roads, utilities and amenities, and its fee shows up on your property tax bill. Many newer communities in Estero, Fort Myers and Naples have both. Compare total monthly cost, not list price alone. Our guide to <a href="/posts/cdd-fees-bonita-springs-estero-buyers-guide.html">CDD fees</a> explains more.</p>
+
+  <h2>Where does the right agent make a difference?</h2>
+  <p>A calculator gives you a number. Knowing which homes will actually hit that number takes local knowledge. Taxes, insurance, association fees and special assessments can make a lower-priced home cost more each month than a higher-priced one down the street. Since 2005, Mark and Dawn have helped buyers across Lee and Collier County find those differences before they write an offer, not after closing. When you're ready, we'll help you compare real homes on their true monthly cost. Start on our <a href="/buy-with-us/">Buy With Us</a> page.</p>
+</article>
+
+<div class="post-cta">
+  <h3>Ready to see which homes fit your number?</h3>
+  <p>Mark and Dawn have helped Southwest Florida buyers since 2005. Tell us your budget and we'll show you homes that fit it once taxes, insurance and fees are counted in. Call or text <span class="nowrap">239-350-4474</span>.</p>
+  <a class="btn" href="/buy-with-us/">Start Your Home Search</a>
+</div>
+
+<div class="related">
+  <h4>Related Reading</h4>
+  <ul>
+    <li><a href="/posts/florida-amendment-3-passed-southwest-florida-homeowners.html">Amendment 3 passed: what it means for Southwest Florida homeowners</a></li>
+    <li><a href="/posts/cost-of-homeownership-southwest-florida.html">The real cost of homeownership in Southwest Florida</a></li>
+    <li><a href="/posts/florida-homestead-exemption-bonita-springs.html">Florida homestead exemption explained</a></li>
+    <li><a href="/posts/rate-lock-strategy-cape-coral.html">Rate lock strategy for buyers</a></li>
+    <li><a href="/resources/">More free tools and resources</a></li>
+  </ul>
+</div>
+
+<footer class="tbgf"></footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var mode = 'pay', county = 'lee', term = 30;
+
+  // County-average 2025 millage (Florida TaxWatch), with the school share split out
+  // because Amendment 3 changes only the non-school exemption.
+  var MILLS = { lee: { total: 15.97, school: 5.32, name: 'Lee County' }, collier: { total: 11.05, school: 4.64, name: 'Collier County' } };
+  var SCHOOL_EX = 25000;          // homestead exemption that applies to school taxes (unchanged)
+  var CURRENT_NONSCHOOL_EX = 51411; // 2026 total homestead exemption on non-school taxes
+  var PMI_RATE = 0.005;
+
+  function num(id) { var v = String($(id).value || '').replace(/[^0-9.]/g, ''); return v ? parseFloat(v) : 0; }
+  function money(n) { return (n < 0 ? '-$' : '$') + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  function millRates() {
+    var m = MILLS[county], o = num('m-mills');
+    if (o > 0) return { total: o, school: o * m.school / m.total, custom: true };
+    return { total: m.total, school: m.school, custom: false };
+  }
+  function nonSchoolEx(year) {
+    if (!$('m-home').checked) return 0;
+    if ($('m-res').value === 'after') return CURRENT_NONSCHOOL_EX;
+    return year >= 2028 ? 250000 : 150000;
+  }
+  function annualTax(value, year) {
+    var r = millRates(), hs = $('m-home').checked;
+    var school = Math.max(0, value - (hs ? SCHOOL_EX : 0)) * r.school / 1000;
+    var other = Math.max(0, value - nonSchoolEx(year)) * (r.total - r.school) / 1000;
+    return school + other;
+  }
+  function pAndI(loan) {
+    var r = num('m-rate') / 100 / 12, n = term * 12;
+    if (loan <= 0) return 0;
+    return r ? loan * r / (1 - Math.pow(1 + r, -n)) : loan / n;
+  }
+  function breakdown(price, down) {
+    var year = $('m-home').checked ? parseInt($('m-year').value, 10) : 2027;
+    var loan = Math.max(0, price - down);
+    var pmi = price > 0 && down / price < 0.2 ? loan * PMI_RATE / 12 : 0;
+    return {
+      price: price, down: down, loan: loan,
+      pi: pAndI(loan), tax: annualTax(price, year) / 12,
+      hoi: num('m-hoi') / 12, flood: num('m-flood') / 12,
+      hoa: num('m-hoa'), cdd: num('m-cdd') / 12, pmi: pmi, year: year
+    };
+  }
+  function totalOf(b) { return b.pi + b.tax + b.hoi + b.flood + b.hoa + b.cdd + b.pmi; }
+
+  // Highest price whose payment fits the given limits, with the down payment fixed in dollars.
+  function maxPrice(housingCap, totalCap) {
+    var income = num('m-income') / 12, debts = num('m-debts'), cash = num('m-cash');
+    var lo = 0, hi = 20000000;
+    for (var i = 0; i < 60; i++) {
+      var mid = (lo + hi) / 2, b = breakdown(mid, Math.min(cash, mid)), pay = totalOf(b);
+      var ok = (housingCap ? pay <= income * housingCap : true) && pay + debts <= income * totalCap;
+      if (ok) lo = mid; else hi = mid;
+    }
+    return Math.floor(lo / 1000) * 1000;
+  }
+
+  var COLORS = { pi: 'var(--gold)', tax: 'var(--rose-muted)', ins: 'var(--silver)', fees: 'var(--rose-light)', pmi: 'var(--silver-dark)' };
+
+  function render(b, headline, sub) {
+    var total = totalOf(b);
+    var parts = [
+      ['pi', 'Principal & interest', b.pi, money(b.loan) + ' loan at ' + (num('m-rate') || 0) + '% for ' + term + ' years'],
+      ['tax', 'Property taxes', b.tax, taxNote(b)],
+      ['ins', 'Homeowners insurance', b.hoi, 'From your yearly estimate'],
+      ['ins', 'Flood insurance', b.flood, b.flood ? 'From your yearly estimate' : 'None entered'],
+      ['fees', 'HOA / condo dues', b.hoa, b.hoa ? '' : 'None entered'],
+      ['fees', 'CDD fee', b.cdd, b.cdd ? 'Yearly fee spread over 12 months' : 'None entered'],
+      ['pmi', 'Mortgage insurance (PMI)', b.pmi, b.pmi ? 'Estimated until you reach 20% equity' : 'None with 20% or more down']
+    ];
+    var rows = '';
+    parts.forEach(function (p) { rows += '<tr><td>' + esc(p[1]) + (p[3] ? '<small>' + esc(p[3]) + '</small>' : '') + '</td><td>' + money(p[2]) + '</td></tr>'; });
+    rows += '<tr class="total"><td>Estimated monthly payment</td><td>' + money(total) + '</td></tr>';
+    $('o-items').innerHTML = rows;
+
+    var groups = { pi: 0, tax: 0, ins: 0, fees: 0, pmi: 0 };
+    parts.forEach(function (p) { groups[p[0]] += p[2]; });
+    var labels = { pi: 'Principal & interest', tax: 'Taxes', ins: 'Insurance', fees: 'HOA & CDD', pmi: 'PMI' };
+    var bar = '', leg = '';
+    Object.keys(groups).forEach(function (k) {
+      if (groups[k] <= 0) return;
+      bar += '<span style="width:' + (total ? groups[k] / total * 100 : 0) + '%;background:' + COLORS[k] + '"></span>';
+      leg += '<span><i style="background:' + COLORS[k] + '"></i>' + labels[k] + ' ' + money(groups[k]) + '</span>';
+    });
+    $('o-bar').innerHTML = bar; $('o-legend').innerHTML = leg;
+    $('o-big').textContent = headline; $('st-v').textContent = headline;
+    $('o-sub').textContent = sub;
+    return { parts: parts, total: total };
+  }
+
+  function taxNote(b) {
+    var r = millRates();
+    var who = $('m-home').checked ? 'Homestead, ' + ($('m-res').value === 'after' ? 'new resident (current exemption)' : b.year + ' Amendment 3 exemption') : 'No homestead exemption';
+    return who + ' · ' + r.total.toFixed(2) + ' mills' + (r.custom ? '' : ' (' + MILLS[county].name + ' average)');
+  }
+
+  function a3Message(b) {
+    var box = $('o-a3');
+    if (!b.price) { box.hidden = true; return; }
+    if (!$('m-home').checked) {
+      box.innerHTML = '<strong>Second home or investment property?</strong> The larger Amendment 3 homestead exemption applies only to a primary residence. What you get instead: starting in 2027, the yearly cap on increases in your assessed value for non-school taxes drops from 10% to 5%.';
+      box.hidden = false; return;
+    }
+    var before = annualTax2026(b.price);
+    var now = annualTax(b.price, b.year);
+    if ($('m-res').value === 'after') {
+      var later = (function () { var r = millRates(); return Math.max(0, b.price - SCHOOL_EX) * r.school / 1000 + Math.max(0, b.price - 250000) * (r.total - r.school) / 1000; })();
+      box.innerHTML = '<strong>New to Florida in 2027 or later?</strong> You start with the current homestead exemption. Under Amendment 3, the larger exemption begins in your fifth year, when your estimated taxes would drop to about ' + money(later) + ' a year from ' + money(now) + ' (at today\'s rates).';
+    } else {
+      box.innerHTML = '<strong>Amendment 3 savings:</strong> about ' + money(before - now) + ' a year (' + money((before - now) / 12) + ' a month) compared with the 2026 homestead exemption. ' +
+        (b.year < 2028 ? 'In 2028, when the exemption rises to $250,000, estimated taxes drop to about ' + money(annualTax(b.price, 2028)) + ' a year.' : 'This uses the full $250,000 exemption that starts in 2028.');
+    }
+    box.hidden = false;
+  }
+  function annualTax2026(value) {
+    var r = millRates();
+    return Math.max(0, value - SCHOOL_EX) * r.school / 1000 + Math.max(0, value - CURRENT_NONSCHOOL_EX) * (r.total - r.school) / 1000;
+  }
+
+  function calc() {
+    var r = millRates();
+    $('mills-note').textContent = r.custom
+      ? 'Using your rate. About ' + r.school.toFixed(2) + ' mills are treated as school taxes, the same share as the county average.'
+      : MILLS[county].name + ' average: ' + MILLS[county].total + ' mills, about ' + MILLS[county].school + ' for schools. Find a home\'s exact rate on its tax bill or TRIM notice.';
+    var det = [], warn = '', headline, b, out;
+
+    if (mode === 'pay') {
+      var price = num('m-price'), down = num('m-down');
+      b = breakdown(price, Math.min(down, price));
+      out = render(b, money(totalOf(b)), price ? money(price) + ' home · ' + (price ? Math.round(down / price * 100) : 0) + '% down (' + money(down) + ')' : '');
+      $('o-k').textContent = 'Estimated monthly payment'; $('st-k').textContent = 'Monthly payment';
+      headline = money(out.total) + '/month';
+      det.push('Home price: ' + money(price));
+      det.push('Down payment: ' + money(down) + ' (' + (price ? Math.round(down / price * 100) : 0) + '%)');
+      if (down > price && price) warn = 'Your down payment is more than the price.';
+    } else {
+      var comfy = maxPrice(0.28, 0.36), stretch = maxPrice(0, 0.43);
+      b = breakdown(comfy, Math.min(num('m-cash'), comfy));
+      out = render(b, money(comfy), comfy ? 'Stretch range: up to about ' + money(stretch) + ' · Payment at ' + money(comfy) + ': ' + money(totalOf(b)) + '/month' : '');
+      $('o-k').textContent = 'You could comfortably afford about'; $('st-k').textContent = 'Comfortable price';
+      headline = 'About ' + money(comfy) + ' comfortable (stretch ' + money(stretch) + ')';
+      det.push('Comfortable price range: ' + money(comfy));
+      det.push('Stretch price range: ' + money(stretch));
+      det.push('Household income: ' + money(num('m-income')) + '/year');
+      det.push('Monthly debts: ' + money(num('m-debts')));
+      det.push('Down payment: ' + money(Math.min(num('m-cash'), comfy)));
+      if (!num('m-income')) warn = 'Enter your household income to see your price range.';
+      else if (!comfy) warn = 'At these numbers, monthly debts and housing costs are already above common lending limits. A lender can tell you what programs might fit. Call us at 239-350-4474 and we can point you in the right direction.';
+    }
+    $('o-warn').hidden = !warn; $('o-warn').textContent = warn;
+    a3Message(b);
+
+    out.parts.forEach(function (p) { det.push(p[1] + ': ' + money(p[2]) + '/month'); });
+    det.push('Estimated monthly payment: ' + money(out.total));
+    det.push(MILLS[county].name + ' | ' + num('m-rate') + '% for ' + term + ' years | ' + ($('m-home').checked ? 'Primary residence' : 'Not a primary residence'));
+    $('s-county').value = MILLS[county].name;
+    $('s-mode').value = mode === 'pay' ? 'Monthly payment' : 'Affordability';
+    $('s-headline').value = headline;
+    $('s-details').value = det.join('\n');
+  }
+
+  function setPressed(attr, val) { document.querySelectorAll('[' + attr + ']').forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute(attr) === String(val) ? 'true' : 'false'); }); }
+  document.querySelectorAll('[data-mode]').forEach(function (x) { x.addEventListener('click', function () {
+    mode = x.getAttribute('data-mode'); setPressed('data-mode', mode);
+    document.querySelectorAll('.pay-only').forEach(function (e) { e.hidden = mode !== 'pay'; });
+    document.querySelectorAll('.afford-only').forEach(function (e) { e.hidden = mode !== 'afford'; });
+    calc();
+  }); });
+  document.querySelectorAll('[data-county]').forEach(function (x) { x.addEventListener('click', function () { county = x.getAttribute('data-county'); setPressed('data-county', county); calc(); }); });
+  document.querySelectorAll('[data-term]').forEach(function (x) { x.addEventListener('click', function () { term = parseInt(x.getAttribute('data-term'), 10); setPressed('data-term', term); calc(); }); });
+  $('m-home').addEventListener('change', function () { document.querySelectorAll('.hs-only').forEach(function (e) { e.hidden = !$('m-home').checked; }); });
+
+  // Keep down payment % and $ in sync.
+  $('m-downpct').addEventListener('input', function () { var p = num('m-price'); $('m-down').value = Math.round(p * num('m-downpct') / 100).toLocaleString('en-US'); });
+  $('m-down').addEventListener('input', function () { var p = num('m-price'); $('m-downpct').value = p ? (Math.round(num('m-down') / p * 1000) / 10) : 0; });
+  $('m-price').addEventListener('input', function () { var p = num('m-price'); $('m-down').value = Math.round(p * num('m-downpct') / 100).toLocaleString('en-US'); });
+
+  $('m-form').addEventListener('input', calc);
+  $('m-form').addEventListener('change', calc);
+  document.querySelectorAll('.money input').forEach(function (i) {
+    i.addEventListener('blur', function () { var n = num(i.id); i.value = n ? Math.round(n).toLocaleString('en-US') : '0'; });
+  });
+  calc();
+
+  if ('IntersectionObserver' in window) {
+    var formVisible = false, resultVisible = false, bar = $('sticky-net');
+    var upd = function () { bar.classList.toggle('show', formVisible && !resultVisible); };
+    new IntersectionObserver(function (e) { formVisible = e[0].isIntersecting; upd(); }).observe($('m-form'));
+    new IntersectionObserver(function (e) { resultVisible = e[0].isIntersecting; upd(); }).observe(document.querySelector('.net-hero'));
+  }
+
+  var tracked = false;
+  $('m-form').addEventListener('input', function () { if (!tracked && window.gtag) { tracked = true; gtag('event', 'mortgage_calc_used'); } });
+  $('m-print').addEventListener('click', function () { window.print(); });
+
+  $('s-bytext').addEventListener('change', function () { $('s-phone-wrap').hidden = !$('s-bytext').checked; });
+
+  $('send-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, err = $('send-err');
+    var byT = $('s-bytext').checked;
+    var email = $('s-email').value.trim(), phone = $('s-phone').value.replace(/[^0-9]/g, '');
+    var msg = '';
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) msg = 'Please enter a valid email address.';
+    else if (byT && phone.length < 10) msg = 'Please enter a 10-digit mobile number.';
+    if (msg) { err.textContent = msg; err.hidden = false; return; }
+    err.hidden = true;
+    if (!byT) $('s-phone').value = '';
+    calc();
+    $('s-sendby').value = byT ? 'Email and text' : 'Email';
+    var btn = $('send-go'); btn.disabled = true; btn.textContent = 'Sending…';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        f.hidden = true; $('send-thanks').hidden = false;
+        if (window.gtag) gtag('event', 'generate_lead', { form: 'mortgage-send', send_by: $('s-sendby').value });
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Send My Estimate';
+        err.textContent = 'Sorry, that didn’t go through. Please call or text us at 239-350-4474.'; err.hidden = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>
