@@ -14,6 +14,7 @@ status (active / pending / sold).
 import asyncio, json, os, statistics, sys, datetime
 from playwright.async_api import async_playwright
 
+MIN_SALES = 3  # fewer closed sales than this: no median or % of list (too few to mean anything)
 SKIP_HEADERS = {"content-length", "host", ":authority", ":method", ":path", ":scheme"}
 
 
@@ -100,9 +101,9 @@ def area_stats(seen):
             "active": len(act),
             "pending": len(pen),
             "sold": len(sold),
-            "medianSold": median([pr["ClosePrice"] for pr in sold]),
+            "medianSold": median([pr["ClosePrice"] for pr in sold]) if len(sold) >= MIN_SALES else None,
             "medianList": median([pr["ListPrice"] for pr in act if pr.get("ListPrice")]),
-            "saleToList": round(statistics.median(ratios) * 100, 1) if ratios else None,
+            "saleToList": round(statistics.median(ratios) * 100, 1) if len(ratios) >= MIN_SALES else None,
         }
     return stats
 
@@ -155,17 +156,24 @@ async def main(cfg_path, out_path, prev_path=None):
         d = by_area[a["id"]]
         if d["failed"]:
             errors.extend(f'{a["label"]}: {f}' for f in d["failed"])
-            if a["id"] in prev:
-                kept = dict(prev[a["id"]])
-                kept["stale"] = True
-                areas.append(kept)
+            ids = [x["id"] for x in (a.get("split") or [a])]
+            if all(i in prev for i in ids):
+                for i in ids:
+                    kept = dict(prev[i])
+                    kept["stale"] = True
+                    areas.append(kept)
                 continue
-        block = {"id": a["id"], "name": a["label"], "url": a["url"], "soldDays": a["soldDays"], **area_stats(d["seen"])}
-        for key in a.get("omit", []):  # e.g. "sf.pending" while a saved search is missing
-            k, f = key.split(".")
-            block[k][f] = None
-        block["reads"] = d["reads"]
-        areas.append(block)
+        # An area can be split into smaller areas by ZIP code (e.g. Bonita Beach 34134 / Fort Myers Beach 33931).
+        parts = a.get("split") or [{"id": a["id"], "label": a["label"], "url": a["url"]}]
+        for part in parts:
+            zips = set(part.get("zips") or [])
+            seen = {m: pr for m, pr in d["seen"].items() if not zips or str(pr.get("PostalCode") or "")[:5] in zips}
+            block = {"id": part["id"], "name": part["label"], "url": part["url"], "soldDays": a["soldDays"], **area_stats(seen)}
+            for key in a.get("omit", []):  # e.g. "sf.pending" while a saved search is missing
+                k, f = key.split(".")
+                block[k][f] = None
+            block["reads"] = d["reads"]
+            areas.append(block)
 
     now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-5)))
     result = {"updated": now.isoformat(timespec="minutes"), "updatedLabel": now.strftime("%B %-d, %Y"),

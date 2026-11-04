@@ -55,12 +55,13 @@
   var AREA_URL_FALLBACK = {
     'naples': 'https://communities.theborggroup.com/naples/',
     'bonita-springs': 'https://communities.theborggroup.com/bonita-springs/',
-    'beaches': 'https://communities.theborggroup.com/bonita-beach/',
+    'bonita-beach': 'https://communities.theborggroup.com/bonita-beach/',
+    'fort-myers-beach': 'https://blog.theborggroup.com/resources/southwest-florida-housing-market/#fort-myers-beach',
     'estero': 'https://communities.theborggroup.com/estero/',
     'fort-myers': 'https://communities.theborggroup.com/fort-myers/',
     'cape-coral': 'https://communities.theborggroup.com/cape-coral/'
   };
-  var ORDER = ['naples', 'bonita-springs', 'beaches', 'estero', 'fort-myers', 'cape-coral'];
+  var ORDER = ['naples', 'bonita-springs', 'bonita-beach', 'estero', 'fort-myers', 'fort-myers-beach', 'cape-coral'];
   function k(n) {
     if (n == null) return '';
     if (n >= 1e6) return '$' + (n / 1e6).toFixed(n >= 1e7 ? 1 : 2).replace(/\.?0+$/, '') + 'M';

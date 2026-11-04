@@ -33,11 +33,13 @@ const sentence = (a, k, label) => {
   const s = a[k];
   if (!s) return "";
   const bits = [];
-  if (s.active != null && s.pending != null) bits.push(`${num(s.active)} ${label} homes for sale and ${num(s.pending)} under contract`);
+  if (s.active != null && s.pending != null) bits.push(`${num(s.active)} ${label} homes for sale and ${s.pending ? num(s.pending) : "none"} under contract`);
   else if (s.active != null) bits.push(`${num(s.active)} ${label} homes for sale`);
   else if (s.pending != null) bits.push(`${num(s.pending)} ${label} homes under contract`);
   let t = bits.length ? `There are ${bits[0]}.` : "";
-  if (s.sold) {
+  if (s.sold && s.medianSold == null) t += ` Only ${s.sold} ${label} ${s.sold === 1 ? "home" : "homes"} closed in the last ${a.soldDays} days, too few for a meaningful median price.`;
+  else if (!s.sold && s.active) t += ` No ${label} homes closed in the last ${a.soldDays} days.`;
+  if (s.sold && s.medianSold != null) {
     t += ` In the last ${a.soldDays} days, ${s.sold} ${label} ${s.sold === 1 ? "home" : "homes"} closed at a median price of ${short(s.medianSold)}`;
     t += s.saleToList ? `, selling for a median ${pct(s.saleToList)} of the final list price.` : ".";
   }
@@ -53,14 +55,14 @@ const sfSold = areas.filter((a) => a.sf?.medianSold && a.sf.sold >= 10).sort((x,
 const coSold = areas.filter((a) => a.condo?.medianSold && a.condo.sold >= 10).sort((x, y) => x.condo.medianSold - y.condo.medianSold);
 const ratios = areas.flatMap((a) => [a.sf?.saleToList, a.condo?.saleToList]).filter(Boolean).sort((x, y) => x - y);
 const totActive = areas.reduce((t, a) => t + (a.sf?.active || 0) + (a.condo?.active || 0), 0);
-const quick = `As of ${when}, Southwest Florida has about ${num(totActive)} single-family homes and condos for sale across Naples, Bonita Springs, Bonita Beach and Fort Myers Beach, Estero, Fort Myers and Cape Coral. ` +
+const quick = `As of ${when}, the Southwest Florida areas we serve have about ${num(totActive)} single-family homes and condos for sale across Naples, Bonita Springs, Bonita Beach, Estero, Fort Myers, Fort Myers Beach and Cape Coral. ` +
   (sfSold.length ? `The median single-family sold price over the last 45 days (30 in Cape Coral) runs from ${short(sfSold[0].sf.medianSold)} in ${sfSold[0].name} to ${short(sfSold.at(-1).sf.medianSold)} in ${sfSold.at(-1).name}. ` : "") +
   (coSold.length ? `For condos, it runs from ${short(coSold[0].condo.medianSold)} in ${coSold[0].name} to ${short(coSold.at(-1).condo.medianSold)} in ${coSold.at(-1).name}. ` : "") +
   (ratios.length ? `Homes are selling for a median of ${pct(ratios[0])} to ${pct(ratios.at(-1))} of their final list price, which means most buyers are negotiating, and pricing right still matters for sellers.` : "");
 
 const row = (a, k) => {
   const s = a[k] || {};
-  return `<tr><td><a href="${esc(a.url)}">${esc(a.name)}</a></td><td>${num(s.active)}</td><td>${num(s.pending)}</td><td>${money(s.medianSold)}</td><td>${pct(s.saleToList)}</td><td>${months(supply(s, a.soldDays)) ?? "—"}</td></tr>`;
+  return `<tr><td>${a.url.includes("communities.theborggroup.com") ? `<a href="${esc(a.url)}">${esc(a.name)}</a>` : esc(a.name)}</td><td>${num(s.active)}</td><td>${num(s.pending)}</td><td>${money(s.medianSold)}</td><td>${pct(s.saleToList)}</td><td>${months(supply(s, a.soldDays)) ?? "—"}</td></tr>`;
 };
 const table = (k, title) => `
   <h3>${title}</h3>
@@ -117,7 +119,7 @@ const sections = qs
   .map(
     (x) => `
   <h2 id="${x.area.id}">${esc(x.q)}</h2>
-  <p>${esc(x.a)} <a href="${esc(x.area.url)}">Explore ${esc(x.area.name)} communities</a>.</p>`
+  <p>${esc(x.a)}${x.area.url.includes("communities.theborggroup.com") ? ` <a href="${esc(x.area.url)}">Explore ${esc(x.area.name)} communities</a>.` : ""}</p>`
   )
   .join("");
 
