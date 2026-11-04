@@ -289,9 +289,9 @@
       <input type="hidden" name="estimate_details" id="s-details">
       <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
       <div class="send-grid">
-        <div class="full send-how" role="group" aria-label="How should we send it?" hidden>
-          <label><input type="checkbox" id="s-byemail" checked> Email it to me</label>
-          <label><input type="checkbox" id="s-bytext"> Text it to me</label>
+        <div class="full send-how" role="group" aria-label="Text me too">
+          <input type="checkbox" id="s-byemail" checked hidden>
+          <label><input type="checkbox" id="s-bytext"> Also text me when it's on the way</label>
         </div>
         <div>
           <label class="tool-label" for="s-name">First name</label>
@@ -308,7 +308,7 @@
         <div class="full"><button class="btn" type="submit" id="send-go">Send My Estimate</button></div>
       </div>
       <p class="send-err" id="send-err" hidden></p>
-      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information.</p>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email, and by text (including automated texts) if you check the box, about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
     </form>
     <p class="report-thanks" id="send-thanks" hidden>Sent! Check your inbox in the next few minutes (and your spam folder, just in case).</p>
   </div>

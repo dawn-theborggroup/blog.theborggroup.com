@@ -165,9 +165,9 @@
         <input type="hidden" name="send_by" id="f-sendby">
         <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <div class="report-grid">
-          <div class="full send-how" role="group" aria-label="How should we send it?" hidden>
-            <label><input type="checkbox" id="f-byemail" checked> Email it to me</label>
-            <label><input type="checkbox" id="f-bytext"> Text it to me</label>
+          <div class="full send-how" role="group" aria-label="Text me too">
+            <input type="checkbox" id="f-byemail" checked hidden>
+            <label><input type="checkbox" id="f-bytext"> Also text me when it's on the way</label>
           </div>
           <div>
             <label class="tool-label" for="f-name">First name</label>
@@ -192,7 +192,7 @@
           <div class="full"><button class="btn" type="submit" id="report-go">Send My Flood Report</button></div>
         </div>
         <p class="send-err" id="report-err" hidden></p>
-        <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information.</p>
+        <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email, and by text (including automated texts) if you check the box, about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
       </form>
       <p class="report-thanks" id="report-thanks" hidden>Sent! Check your inbox in the next few minutes (and your spam folder, just in case).</p>
     </div>
