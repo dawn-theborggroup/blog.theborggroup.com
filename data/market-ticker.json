@@ -74,24 +74,51 @@
    }
   },
   {
-   "id": "beaches",
-   "name": "Bonita & Fort Myers Beach",
+   "id": "bonita-beach",
+   "name": "Bonita Beach",
    "url": "https://communities.theborggroup.com/bonita-beach/",
    "soldDays": 45,
    "sf": {
-    "active": 176,
+    "active": 23,
+    "pending": 0,
+    "sold": 0,
+    "medianSold": null,
+    "medianList": 6195000,
+    "saleToList": null
+   },
+   "condo": {
+    "active": 67,
+    "pending": 5,
+    "sold": 4,
+    "medianSold": 308000,
+    "medianList": 694000,
+    "saleToList": 98.0
+   },
+   "reads": {
+    "Condo active+pending": 331,
+    "SF active+pending": 182,
+    "SF + condo sold 45 days": 32
+   }
+  },
+  {
+   "id": "fort-myers-beach",
+   "name": "Fort Myers Beach",
+   "url": "https://blog.theborggroup.com/resources/southwest-florida-housing-market/#fort-myers-beach",
+   "soldDays": 45,
+   "sf": {
+    "active": 153,
     "pending": 4,
     "sold": 5,
     "medianSold": 955000,
-    "medianList": 1547000,
+    "medianList": 1388000,
     "saleToList": 96.5
    },
    "condo": {
-    "active": 311,
-    "pending": 20,
-    "sold": 26,
-    "medianSold": 393750,
-    "medianList": 599999,
+    "active": 244,
+    "pending": 15,
+    "sold": 22,
+    "medianSold": 408500,
+    "medianList": 569000,
     "saleToList": 95.0
    },
    "reads": {

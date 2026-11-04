@@ -95,6 +95,8 @@ Added Nov 4, 2026.
   Bonita & Fort Myers Beach, Estero, Fort Myers, Cape Coral). Big areas are split into price bands to stay under
   OneHome's 500-result limit; listings are de-duplicated by MLS number. Sold = last 45 days (Cape Coral 30).
   An "omit" entry (e.g. "sf.pending") hides a number while its saved search is missing.
+  A "split" entry divides one set of searches by ZIP (Bonita Beach 34134 / Fort Myers Beach 33931).
+  Median sold price and % of list need at least 3 closed sales; otherwise they are left blank.
   The script reads each search through OneHome's GetSavedListings request (50 at a time). If a search fails twice,
   that area keeps its previous numbers and is marked "stale".
 - Single-family = PropertySubType SingleFamilyResidence or Detached; condo = Condominium, Attached, Townhouse,
