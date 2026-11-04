@@ -11,7 +11,7 @@ does it; the menu text is identical in all pages except the Blog link, which is 
 
 ## Footer: SHARED
 scripts/footer.html is the single source. scripts/apply-footer.mjs copies it into every page on each deploy.
-Change the footer once in scripts/footer.html (it contains the "Search Homes" link).
+Change the footer once in scripts/footer.html (it contains the "Search Homes" link and the Google Preferred Sources button, which links to https://google.com/preferences/source?q=blog.theborggroup.com).
 
 ## Adding a new post (what the nightly task does)
 1. Copy the structure of posts/moving-to-fort-myers-relocation-guide.html (site-header, breadcrumb,
