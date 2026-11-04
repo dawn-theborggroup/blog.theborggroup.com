@@ -45,6 +45,11 @@ Added Nov 3, 2026. Each tool is its own folder with an index.html, so URLs are c
   Netlify dashboard: Forms -> flood-report -> Form notifications.
 - To add a tool: copy resources/flood-zone-lookup/index.html as a starting point, then switch
   its hub tile in resources/index.html from "Coming soon" to a link and add it to the hub's ItemList.
+- Mortgage & Affordability Calculator (/resources/mortgage-affordability-calculator/), added Nov 4, 2026.
+  Property taxes use county-average 2025 millage (Lee 15.97 / 5.32 school; Collier 11.05 / 4.64 school)
+  and Amendment 3 homestead rules (non-school exemption $150,000 in 2027, $250,000 in 2028; new residents
+  after Dec 31, 2026 get the current $51,411 until year five). The default rate is Freddie Mac's weekly
+  average; update the value and hint text in the page when it moves meaningfully.
 
 ## Buy With Us page: /buy-with-us/
 Added Nov 3, 2026. The main menu's "Buy" link points here. Home search form submits to
@@ -57,5 +62,9 @@ Form detection was turned on for this project on Nov 3, 2026 (Project configurat
 Netlify only picks up new forms on a deploy that happens after detection is on. If a new form
 doesn't appear under Forms, trigger a fresh deploy.
 Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-alerts (/buy-with-us/),
-seller-net-sheet (/resources/seller-net-sheet/). Email alerts: Forms -> Submission notifications
+seller-net-sheet and net-sheet-send (/resources/seller-net-sheet/), mortgage-send
+(/resources/mortgage-affordability-calculator/). Every submission is also POSTed to a Zapier webhook
+(workflow "blog-forms-to-boldtrail-and-net-sheet-email"), which emails the visitor their results
+from dawn@ and creates the BoldTrail contact. A new "email me my results" form needs an entry in that
+workflow's FORMS map and an email template. Email alerts: Forms -> Submission notifications
 ("any form" -> dawn@theborggroup.com; only Netlify team members can receive them).
