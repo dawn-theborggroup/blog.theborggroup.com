@@ -152,25 +152,33 @@
     </div>
 
     <div class="report-box" id="report-box">
-      <h3>Want the full flood report on this home?</h3>
-      <p>We'll send you this result plus a zone guide and the insurance questions to ask before you make an offer. Mark or Dawn will personally review the address and follow up, usually the same day.</p>
+      <h3>Email this flood report to yourself</h3>
+      <p>Get this result, what the zone means, and the insurance questions to ask before you make an offer, sent straight to you.</p>
       <form name="flood-report" id="report-form" method="POST" action="/resources/flood-zone-lookup/" data-netlify="true" netlify-honeypot="company">
         <input type="hidden" name="form-name" value="flood-report">
         <input type="hidden" name="property_address" id="f-address">
         <input type="hidden" name="flood_zone" id="f-zone">
         <input type="hidden" name="county" id="f-county">
+        <input type="hidden" name="zone_title" id="f-title">
+        <input type="hidden" name="zone_explain" id="f-explain">
+        <input type="hidden" name="lender_note" id="f-lender">
+        <input type="hidden" name="send_by" id="f-sendby">
         <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <div class="report-grid">
-          <div>
-            <label class="tool-label" for="f-name">Name</label>
-            <input class="tool-input" id="f-name" name="name" type="text" autocomplete="name" required>
+          <div class="full send-how" role="group" aria-label="Text me too">
+            <input type="checkbox" id="f-byemail" checked hidden>
+            <label><input type="checkbox" id="f-bytext"> Also text me when it's on the way</label>
           </div>
           <div>
+            <label class="tool-label" for="f-name">First name</label>
+            <input class="tool-input" id="f-name" name="name" type="text" autocomplete="given-name">
+          </div>
+          <div id="f-email-wrap">
             <label class="tool-label" for="f-email">Email</label>
-            <input class="tool-input" id="f-email" name="email" type="email" autocomplete="email" required>
+            <input class="tool-input" id="f-email" name="email" type="email" autocomplete="email">
           </div>
-          <div>
-            <label class="tool-label" for="f-phone">Phone (optional)</label>
+          <div id="f-phone-wrap" hidden>
+            <label class="tool-label" for="f-phone">Mobile number</label>
             <input class="tool-input" id="f-phone" name="phone" type="tel" autocomplete="tel">
           </div>
           <div>
@@ -181,16 +189,17 @@
               <option>Just researching</option>
             </select>
           </div>
-          <div class="full"><button class="btn" type="submit" id="report-go">Email Me the Full Report</button></div>
+          <div class="full"><button class="btn" type="submit" id="report-go">Send My Flood Report</button></div>
         </div>
-        <p class="report-privacy">We never sell or share your information, and we won't spam you.</p>
+        <p class="send-err" id="report-err" hidden></p>
+        <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email, and by text (including automated texts) if you check the box, about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
       </form>
-      <p class="report-thanks" id="report-thanks" hidden>Thank you! Your report request is in, and we'll be in touch shortly.</p>
+      <p class="report-thanks" id="report-thanks" hidden>Sent! Check your inbox in the next few minutes (and your spam folder, just in case).</p>
     </div>
   </div>
 </section>
 
-<p class="tool-disclaimer">Flood data comes from FEMA's National Flood Hazard Layer and the U.S. Census geocoder and is provided for planning purposes only. It is not an insurance quote, an official flood zone determination, or an elevation certificate. Flood maps change; always confirm the zone with your lender and a licensed insurance agent before you buy.</p>
+<p class="tool-disclaimer">Flood data comes from FEMA's National Flood Hazard Layer and the U.S. Census geocoder and is provided as information and knowledge only, for planning purposes. It is not an insurance quote, an official flood zone determination, or an elevation certificate. Flood maps change; always confirm the zone with your lender and a licensed insurance agent before you buy.</p>
 
 <article class="post-body">
 
@@ -342,6 +351,9 @@
     $('f-address').value = d.place.matchedAddress || typed;
     $('f-zone').value = (key === 'X500' ? 'X (shaded)' : code) + (d.bfe != null ? ' / BFE ' + d.bfe + ' ft' : '');
     $('f-county').value = d.place.county || '';
+    $('f-title').value = info.title;
+    $('f-explain').value = info.explain;
+    $('f-lender').value = info.lender;
 
     errBox.hidden = true;
     result.hidden = false;
@@ -379,11 +391,28 @@
 
   $('flood-print').addEventListener('click', function () { window.print(); });
 
+  function syncHow() {
+    $('f-email-wrap').hidden = !$('f-byemail').checked;
+    $('f-phone-wrap').hidden = !$('f-bytext').checked;
+  }
+  $('f-byemail').addEventListener('change', syncHow);
+  $('f-bytext').addEventListener('change', syncHow);
+
   $('report-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    var f = e.target;
-    if (!f.checkValidity()) { f.reportValidity(); return; }
-    var btn = $('report-go'); btn.disabled = true; btn.textContent = 'Sending…';
+    var f = e.target, err = $('report-err');
+    var byE = $('f-byemail').checked, byT = $('f-bytext').checked;
+    var email = $('f-email').value.trim(), phone = $('f-phone').value.replace(/[^0-9]/g, '');
+    var msg = '';
+    if (!byE && !byT) msg = 'Please enter your email address.';
+    else if (byE && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) msg = 'Please enter a valid email address.';
+    else if (byT && phone.length < 10) msg = 'Please enter a 10-digit mobile number.';
+    if (msg) { err.textContent = msg; err.hidden = false; return; }
+    err.hidden = true;
+    if (!byE) $('f-email').value = '';
+    if (!byT) $('f-phone').value = '';
+    $('f-sendby').value = byE && byT ? 'Email and text' : (byE ? 'Email' : 'Text');
+    var btn = $('report-go'); btn.disabled = true; btn.textContent = 'Sending\u2026';
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -391,11 +420,10 @@
     }).then(function (r) {
       if (!r.ok) throw new Error();
       f.hidden = true; $('report-thanks').hidden = false;
-      if (window.gtag) gtag('event', 'generate_lead', { form: 'flood-report' });
+      if (window.gtag) gtag('event', 'generate_lead', { form: 'flood-report', send_by: $('f-sendby').value });
     }).catch(function () {
-      btn.disabled = false; btn.textContent = 'Email Me the Full Report';
-      $('report-thanks').hidden = false;
-      $('report-thanks').textContent = 'Sorry, that didn’t go through. Please call or text us at 239-350-4474.';
+      btn.disabled = false; btn.textContent = 'Send My Flood Report';
+      err.textContent = 'Sorry, that didn\u2019t go through. Please call or text us at 239-350-4474.'; err.hidden = false;
     });
   });
 })();

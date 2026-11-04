@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Net Sheet Calculator for Lee &amp; Collier County, Florida | The Borg Group</title>
+<meta name="description" content="What will you actually walk away with when you sell your Southwest Florida home? Estimate your net proceeds after commissions, Florida doc stamps, title insurance, HOA estoppels and tax prorations, for Lee and Collier County.">
+<link rel="canonical" href="https://blog.theborggroup.com/resources/seller-net-sheet/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/tools.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8YTWVXK2J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q8YTWVXK2J');
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a.btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'contact_click', {'link_text': btn.textContent.trim(),'link_url': btn.getAttribute('href'),'page_path': window.location.pathname,'page_title': document.title});
+      });
+    });
+  });
+</script>
+
+<meta property="og:title" content="Seller Net Sheet Calculator for Lee &amp; Collier County">
+<meta property="og:description" content="Estimate what you'll walk away with when you sell your Southwest Florida home, with Florida doc stamps, title insurance and tax prorations built in.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.theborggroup.com/resources/seller-net-sheet/">
+<meta property="og:image" content="https://blog.theborggroup.com/assets/images/home-sold-sign.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seller Net Sheet Calculator for Lee &amp; Collier County">
+<meta name="twitter:description" content="What will you actually walk away with? Estimate your Southwest Florida net proceeds in a minute.">
+<meta name="twitter:image" content="https://blog.theborggroup.com/assets/images/home-sold-sign.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Southwest Florida Seller Net Sheet Calculator",
+  "url": "https://blog.theborggroup.com/resources/seller-net-sheet/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free calculator that estimates a home seller's net proceeds in Lee and Collier County, Florida, including Florida documentary stamp tax on the deed, owner's title insurance at Florida promulgated rates, HOA estoppel fees and property tax proration.",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Lee County, Florida" },
+    { "@type": "AdministrativeArea", "name": "Collier County, Florida" }
+  ],
+  "provider": { "@id": "https://www.theborggroup.com/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://blog.theborggroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://blog.theborggroup.com/resources/" },
+    { "@type": "ListItem", "position": 3, "name": "Seller Net Sheet", "item": "https://blog.theborggroup.com/resources/seller-net-sheet/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is a seller net sheet?", "acceptedAnswer": { "@type": "Answer", "text": "A seller net sheet estimates the money you walk away with after a home sale: the sale price minus your mortgage payoff, commissions, Florida documentary stamp tax, title charges, association fees, tax prorations and any credits you give the buyer." } },
+    { "@type": "Question", "name": "Who pays for title insurance when selling a home in Lee County vs. Collier County?", "acceptedAnswer": { "@type": "Answer", "text": "By local custom, the seller usually pays for the buyer's owner's title insurance policy in Lee County, and the buyer usually pays in Collier County. It is a custom, not a law, so it can be negotiated in the purchase contract. Florida title insurance premiums are set by the state, so the cost is the same at every title company." } },
+    { "@type": "Question", "name": "How much are documentary stamp taxes when selling a home in Florida?", "acceptedAnswer": { "@type": "Answer", "text": "Florida charges documentary stamp tax on the deed at $0.70 per $100 of the sale price (rounded up to the next $100) everywhere except Miami-Dade County. The seller customarily pays it. On a $600,000 sale, that is $4,200." } },
+    { "@type": "Question", "name": "Why do I owe property taxes at closing in Florida?", "acceptedAnswer": { "@type": "Answer", "text": "Florida property taxes are paid in arrears: the bill for the current year arrives in November and is due by the following March. When you sell before the bill is paid, you credit the buyer for the days you owned the home this year, and the buyer pays the full bill when it comes due." } }
+  ]
+}
+</script>
+<style>
+  .calc-grid { display: grid; gap: .9rem 1rem; grid-template-columns: 1fr 1fr; }
+  .calc-grid .full { grid-column: 1 / -1; }
+  @media (max-width: 560px) { .calc-grid { grid-template-columns: 1fr; } }
+  .calc-section { grid-column: 1 / -1; font-family: var(--font-display); font-size: 1.15rem; color: var(--charcoal); margin: .9rem 0 -.2rem; padding-top: .9rem; border-top: 1px solid var(--silver-light); }
+  .calc-section:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+  .money { position: relative; }
+  .money::before { content: "$"; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--silver-dark); pointer-events: none; }
+  .money .tool-input { padding-left: 1.8rem; }
+  .pct { position: relative; }
+  .pct::after { content: "%"; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--silver-dark); pointer-events: none; }
+  .seg { display: inline-flex; border: 1px solid var(--silver); border-radius: 999px; padding: 3px; background: var(--cream); }
+  .seg button { font: inherit; font-size: .9rem; border: 0; background: transparent; padding: .5rem 1.1rem; border-radius: 999px; cursor: pointer; color: var(--charcoal); }
+  .seg button[aria-pressed="true"] { background: var(--charcoal); color: var(--cream); }
+  .chk-line { display: flex; gap: .6rem; align-items: flex-start; font-size: .92rem; line-height: 1.5; cursor: pointer; }
+  .chk-line input { margin-top: .3rem; accent-color: var(--dusty-rose); width: 1rem; height: 1rem; flex: none; }
+  .hint { font-size: .78rem; color: var(--silver-dark); margin: .35rem 0 0; line-height: 1.45; }
+
+  .net-hero { margin-top: var(--space-4); padding: var(--space-3); background: var(--charcoal); color: var(--cream); border-radius: 2px; display: grid; gap: var(--space-2); }
+  @media (min-width: 640px) { .net-hero { grid-template-columns: 1.2fr 1fr; align-items: center; } }
+  .net-hero .k { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--rose-muted); }
+  .net-hero .big { font-family: var(--font-display); font-size: clamp(2.3rem, 7vw, 3.2rem); line-height: 1.05; color: #fff; }
+  .net-hero .small { font-size: .88rem; color: var(--silver); }
+  .bar { height: 14px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; display: flex; }
+  .bar span { display: block; height: 100%; }
+  .bar .b-net { background: var(--gold); }
+  .bar .b-pay { background: var(--rose-muted); }
+  .bar .b-cost { background: var(--silver-dark); }
+  .legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .78rem; color: var(--silver); margin-top: .55rem; }
+  .legend i { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; margin-right: .35rem; vertical-align: -.05rem; }
+  .warn { margin-top: var(--space-2); font-size: .9rem; background: var(--cream-warm); border-left: 3px solid var(--dusty-rose); padding: .75rem 1rem; }
+
+  table.items { width: 100%; border-collapse: collapse; margin-top: var(--space-3); font-size: .95rem; }
+  table.items td { padding: .6rem 0; border-bottom: 1px solid var(--silver-light); vertical-align: top; }
+  table.items td:last-child { text-align: right; white-space: nowrap; padding-left: 1rem; color: var(--charcoal); }
+  table.items td small { display: block; font-size: .78rem; color: var(--silver-dark); }
+  table.items tr.sub td { font-weight: 500; color: var(--charcoal); border-bottom: 2px solid var(--charcoal); }
+  table.items tr.credit td:last-child { color: #2f6b4f; }
+  .est-note { margin-top: .35rem; font-size: .76rem; color: var(--silver); font-style: italic; }
+  .sticky-net { display: none; }
+  @media (max-width: 760px) {
+    .sticky-net { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1.1rem; background: var(--charcoal); color: var(--cream); box-shadow: 0 -8px 24px -12px rgba(0,0,0,.5); transform: translateY(110%); transition: transform .25s ease; }
+    .sticky-net.show { transform: none; }
+    .sticky-net .k { font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose-muted); }
+    .sticky-net .v { font-family: var(--font-display); font-size: 1.5rem; color: #fff; line-height: 1.1; }
+    .sticky-net a { font-size: .8rem; color: var(--rose-light); border-bottom: 1px solid var(--rose); white-space: nowrap; }
+  }
+  @media print { .sticky-net { display: none !important; } }
+  table.items tr.total td { font-family: var(--font-display); font-size: 1.35rem; color: var(--charcoal); border-bottom: 0; padding-top: .9rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class='wordmark' href='/index.html'>The Borg Group<span>Live Where Life Feels Better</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="https://blog.theborggroup.com/buy-with-us/">Buy</a>
+      <a href="https://communities.theborggroup.com/widgets/sell-with-us/">Sell</a>
+      <a href="https://communities.theborggroup.com/">Communities</a>
+      <a href='/index.html'>Blog</a>
+      <a aria-current="page" href="https://blog.theborggroup.com/resources/">Resources</a>
+      <a href="https://www.theborggroup.com/pages/contact-us">Contact</a>
+      <a class="nav-phone" href="tel:+12393504474">239-350-4474</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/index.html">Blog</a><span>/</span><a href="/resources/">Resources</a><span>/</span>Seller Net Sheet
+</nav>
+
+<header class="post-header">
+  <p class="eyebrow">Resources &middot; Free Tool</p>
+  <hr class="rule">
+  <h1>What will you actually walk away with when you sell?</h1>
+  <p>Most sellers know their price. Far fewer know their number, the check they take home after the payoff, commissions, Florida doc stamps, title, HOA estoppels and tax prorations. Enter a few details about your Lee or Collier County home and you'll see your estimated net proceeds, line by line, as you type. No email required.</p>
+</header>
+
+<section class="tool-card" id="calc" aria-labelledby="tool-title">
+  <h2 id="tool-title">Seller Net Sheet</h2>
+  <p class="tool-sub">Built for Southwest Florida: Lee County and Collier County closing customs, Florida doc stamps and state-set title insurance rates</p>
+
+  <form class="tool-form" id="net-form" novalidate onsubmit="return false">
+    <div class="calc-grid">
+      <p class="calc-section">Your home</p>
+      <div class="full">
+        <span class="tool-label">County</span>
+        <div class="seg" role="group" aria-label="County">
+          <button type="button" data-county="lee" aria-pressed="true">Lee County</button>
+          <button type="button" data-county="collier" aria-pressed="false">Collier County</button>
+        </div>
+        <p class="hint">Lee: Fort Myers, Cape Coral, Bonita Springs, Estero. Collier: Naples, Marco Island.</p>
+      </div>
+      <div>
+        <label class="tool-label" for="n-price">Expected sale price</label>
+        <div class="money"><input class="tool-input" id="n-price" inputmode="numeric" value="600,000"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="n-close">Expected closing date</label>
+        <input class="tool-input" id="n-close" type="date">
+      </div>
+
+      <p class="calc-section">Loans</p>
+      <div>
+        <label class="tool-label" for="n-loan1">Mortgage payoff</label>
+        <div class="money"><input class="tool-input" id="n-loan1" inputmode="numeric" value="250,000"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="n-loan2">Second mortgage / HELOC</label>
+        <div class="money"><input class="tool-input" id="n-loan2" inputmode="numeric" value="0"></div>
+      </div>
+
+      <p class="calc-section">Brokerage</p>
+      <div>
+        <label class="tool-label" for="n-list">Listing brokerage fee</label>
+        <div class="pct"><input class="tool-input" id="n-list" inputmode="decimal" placeholder="Enter your agreed %"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="n-coop">Buyer's agent compensation</label>
+        <div class="pct"><input class="tool-input" id="n-coop" inputmode="decimal" placeholder="Enter % (or 0)"></div>
+      </div>
+      <p class="hint full" style="margin-top:-.4rem">Commissions are always negotiable and are not set by law. Enter what you've agreed to, or what you're considering.</p>
+      <div>
+        <label class="tool-label" for="n-txfee">Brokerage transaction fee</label>
+        <div class="money"><input class="tool-input" id="n-txfee" inputmode="numeric" value="395"></div>
+        <p class="hint">The Downing-Frye Realty transaction fee when you list with The Borg Group.</p>
+      </div>
+
+      <p class="calc-section">Title &amp; closing</p>
+      <div class="full">
+        <label class="chk-line"><input type="checkbox" id="n-title"> <span>I'm paying the buyer's owner's title insurance policy <small class="hint" id="title-note" style="display:block;margin:0">Customary for sellers in Lee County. Checked automatically when you pick Lee.</small></span></label>
+      </div>
+      <div>
+        <label class="tool-label" for="n-settle">Settlement, lien search &amp; courier</label>
+        <div class="money"><input class="tool-input" id="n-settle" inputmode="numeric" value="850"></div>
+        <p class="hint">An estimate. Title company fees vary.</p>
+      </div>
+      <div>
+        <label class="tool-label" for="n-assoc">HOA / condo associations</label>
+        <select class="tool-input" id="n-assoc">
+          <option value="0">None</option><option value="1" selected>1 association</option><option value="2">2 (master + sub)</option><option value="3">3 (master + sub + another)</option>
+        </select>
+        <p class="hint">Each one charges for an estoppel letter (about $299 each).</p>
+      </div>
+
+      <p class="calc-section">Property taxes</p>
+      <div>
+        <label class="tool-label" for="n-tax">Annual property tax bill</label>
+        <div class="money"><input class="tool-input" id="n-tax" inputmode="numeric" value="6,500"></div>
+      </div>
+      <div style="align-self:end">
+        <label class="chk-line"><input type="checkbox" id="n-taxpaid"> <span>This year's tax bill is already paid</span></label>
+      </div>
+
+      <p class="calc-section">Credits &amp; extras</p>
+      <div>
+        <label class="tool-label" for="n-conc">Credits or concessions to the buyer</label>
+        <div class="money"><input class="tool-input" id="n-conc" inputmode="numeric" value="0"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="n-repair">Repairs you'll pay for</label>
+        <div class="money"><input class="tool-input" id="n-repair" inputmode="numeric" value="0"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="n-warranty">Home warranty for the buyer</label>
+        <div class="money"><input class="tool-input" id="n-warranty" inputmode="numeric" value="0"></div>
+      </div>
+      <div>
+        <label class="tool-label" for="n-other">Other (CDD payoff, assessments, liens)</label>
+        <div class="money"><input class="tool-input" id="n-other" inputmode="numeric" value="0"></div>
+      </div>
+    </div>
+  </form>
+
+  <div class="net-hero" aria-live="polite">
+    <div>
+      <div class="k">Estimated net proceeds</div>
+      <div class="big" id="o-net">$0</div>
+      <div class="small" id="o-sub"></div>
+      <div class="small est-note">Estimate only. Your title company's closing statement will have the final numbers.</div>
+    </div>
+    <div>
+      <div class="bar" aria-hidden="true"><span class="b-net" id="b-net"></span><span class="b-pay" id="b-pay"></span><span class="b-cost" id="b-cost"></span></div>
+      <div class="legend"><span><i style="background:var(--gold)"></i>Your net</span><span><i style="background:var(--rose-muted)"></i>Loan payoffs</span><span><i style="background:var(--silver-dark)"></i>Selling costs</span></div>
+    </div>
+  </div>
+  <div class="warn" id="o-warn" hidden></div>
+
+  <table class="items" id="o-items" aria-label="Itemized estimate"></table>
+
+  <div class="tool-actions">
+    <a class="btn" href="tel:+12393504474">Call or Text 239-350-4474</a>
+    <button class="btn btn--ghost" type="button" id="net-print">Print or Save as PDF</button>
+  </div>
+
+  <div class="send-box" id="send">
+    <h3>Email this estimate to yourself</h3>
+    <p>Keep your numbers handy for later. We'll send you this itemized estimate, and you can come back and adjust it anytime.</p>
+    <form name="net-sheet-send" id="send-form" method="POST" action="/resources/seller-net-sheet/" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="net-sheet-send">
+      <input type="hidden" name="send_by" id="s-sendby">
+      <input type="hidden" name="county" id="s-county">
+      <input type="hidden" name="sale_price" id="s-price">
+      <input type="hidden" name="estimated_net" id="s-netval">
+      <input type="hidden" name="estimate_details" id="s-details">
+      <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <div class="send-grid">
+        <div class="full send-how" role="group" aria-label="Text me too">
+          <input type="checkbox" id="s-byemail" checked hidden>
+          <label><input type="checkbox" id="s-bytext"> Also text me when it's on the way</label>
+        </div>
+        <div>
+          <label class="tool-label" for="s-name">First name</label>
+          <input class="tool-input" id="s-name" name="name" type="text" autocomplete="given-name">
+        </div>
+        <div id="s-email-wrap">
+          <label class="tool-label" for="s-email">Email</label>
+          <input class="tool-input" id="s-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div id="s-phone-wrap" hidden>
+          <label class="tool-label" for="s-phone">Mobile number</label>
+          <input class="tool-input" id="s-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="full"><button class="btn" type="submit" id="send-go">Send My Estimate</button></div>
+      </div>
+      <p class="send-err" id="send-err" hidden></p>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email, and by text (including automated texts) if you check the box, about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
+    </form>
+    <p class="report-thanks" id="send-thanks" hidden>Sent! Check your inbox in the next few minutes (and your spam folder, just in case).</p>
+  </div>
+
+  <div class="report-box">
+    <h3>Want a net sheet based on your home's real value?</h3>
+    <p>This estimate is only as good as the price you typed in. Tell us where your home is, and Mark or Dawn will prepare a pricing review with recent neighborhood sales plus a net sheet built from your actual payoff, taxes and associations, usually within one business day.</p>
+    <form name="seller-net-sheet" id="report-form" method="POST" action="/resources/seller-net-sheet/" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="seller-net-sheet">
+      <input type="hidden" name="estimate_summary" id="f-summary">
+      <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <div class="report-grid">
+        <div>
+          <label class="tool-label" for="f-name">Name</label>
+          <input class="tool-input" id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label class="tool-label" for="f-email">Email</label>
+          <input class="tool-input" id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label class="tool-label" for="f-phone">Phone (optional)</label>
+          <input class="tool-input" id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div>
+          <label class="tool-label" for="f-time">When might you sell?</label>
+          <select class="tool-input" id="f-time" name="timeline">
+            <option>As soon as possible</option><option>In the next 3 months</option><option>3 to 6 months</option><option>6 to 12 months</option><option>Just exploring for now</option>
+          </select>
+        </div>
+        <div class="full">
+          <label class="tool-label" for="f-address">Property address</label>
+          <input class="tool-input" id="f-address" name="property_address" type="text" autocomplete="street-address" required>
+        </div>
+        <div class="full"><button class="btn" type="submit" id="report-go">Get My Pricing Review &amp; Net Sheet</button></div>
+      </div>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by phone, text or email about your home. We never spam, and we will never sell or share your information. If your home is currently listed with another brokerage, this is not a solicitation of that listing.</p>
+    </form>
+    <p class="report-thanks" id="report-thanks" hidden>Thank you! Mark or Dawn will be in touch shortly with your pricing review.</p>
+  </div>
+</section>
+
+<div class="sticky-net" id="sticky-net" aria-hidden="true"><div><div class="k">Estimated net</div><div class="v" id="s-net">$0</div></div><a href="#o-items">See the breakdown</a></div>
+
+<p class="tool-disclaimer">This calculator provides information and knowledge only: an estimate for planning purposes. It is not a closing statement, a settlement statement, or legal, tax or financial advice. Actual figures depend on your contract, your lender's payoff letter, your title company's fees, your association's estoppel charges and your county's tax bill. Commissions are negotiable. Title insurance is calculated at Florida's promulgated owner's rates; county customs on who pays are negotiable in the contract.</p>
+
+<article class="post-body">
+
+  <div class="quick-answer">
+    <p class="eyebrow">Quick Answer</p>
+    <p>Your net proceeds are your sale price minus your loan payoffs and selling costs. In Southwest Florida, the selling costs that catch people off guard are Florida's documentary stamp tax on the deed ($0.70 per $100 of the price), the owner's title insurance policy (customarily paid by the seller in Lee County and by the buyer in Collier County), HOA estoppel letters (about $299 per association), and the property tax proration you credit the buyer because Florida taxes are paid in arrears.</p>
+  </div>
+
+  <h2>Why is my number different from my neighbor's in the next county?</h2>
+  <p>Mostly because of title insurance. In Lee County, local custom has the seller pay for the buyer's owner's title policy and choose the title company. In Collier County, the buyer usually pays and chooses. Florida sets title insurance premiums by law, so the policy costs the same at every title company: $5.75 per $1,000 on the first $100,000 and $5.00 per $1,000 up to $1 million. On a $600,000 sale, that's $3,075 that a Lee County seller usually pays and a Collier County seller usually doesn't. It's a custom, not a law, so it can be negotiated either way.</p>
+
+  <h2>What are doc stamps, and why do I pay them?</h2>
+  <p>Florida charges a documentary stamp tax when a deed is recorded: $0.70 for every $100 of the sale price, rounded up to the next $100. By custom, the seller pays it. On a $600,000 sale, that's $4,200. There's no negotiating it away with the state, but it can be shared through the contract.</p>
+
+  <h2>Why do I owe property taxes at closing?</h2>
+  <p>Florida property taxes are paid in arrears. This year's bill arrives in November and is due by March of next year. If you sell before that bill is paid, you credit the buyer for each day you owned the home this year, and the buyer pays the full bill when it arrives. If you've already paid this year's bill (a late-year closing), it flips: the buyer credits you for the rest of the year. The calculator handles both.</p>
+
+  <h2>How many estoppel letters will I need?</h2>
+  <p>One for each association you belong to. Florida caps the standard estoppel fee at about $299 per association, with extra charges for rush service or a delinquent account. In many gated Southwest Florida communities, a master association plus a neighborhood association means two letters, so order them early. Late estoppels are one of the most common reasons closings slip. See our guide to <a href="/posts/hoa-rules-fees-selling-condo-townhome.html">HOA rules and fees when selling</a>.</p>
+
+  <h2>How do I net more, not just pay less?</h2>
+  <p>This is where the right listing team earns its fee. The biggest swing in your net isn't a closing cost. It's the price your home sells for and how long it takes to get there. A home priced right and launched well sells closer to its asking price and sooner, which means fewer price cuts, fewer months of mortgage, insurance and HOA payments, and stronger negotiating leverage on repairs and concessions. Mark walks every listing the way a builder would, so problems get fixed or disclosed before a buyer's inspector finds them. Dawn tracks every deadline, estoppel and payoff letter, so nothing delays your closing or chips away at your proceeds. Read <a href="/posts/top-strategies-maximize-net-proceeds.html">our top strategies to maximize your net proceeds</a> and <a href="/posts/overpricing-costs-southwest-florida-sellers.html">what overpricing really costs</a>.</p>
+</article>
+
+<div class="post-cta">
+  <h3>Want your real number, not an estimate?</h3>
+  <p>Mark and Dawn have been helping Southwest Florida sellers since 2005. We'll price your home on real neighborhood sales and build your net sheet from your actual payoff, taxes and associations. Call or text <span class="nowrap">239-350-4474</span>.</p>
+  <a class="btn" href="https://communities.theborggroup.com/widgets/sell-with-us/?mode=fresh">Get My Home's Value &amp; Selling Plan</a>
+</div>
+
+<div class="related">
+  <h4>Related Reading</h4>
+  <ul>
+    <li><a href="/posts/seller-closing-costs-lee-collier-county.html">Seller closing costs in Lee vs. Collier County</a></li>
+    <li><a href="/posts/net-proceeds-calculator-southwest-florida.html">What you'll actually walk away with: net proceeds explained</a></li>
+    <li><a href="/posts/seller-concessions-southwest-florida-guide-2026.html">Seller concessions in Southwest Florida</a></li>
+    <li><a href="/posts/pricing-strategy-southwest-florida-2026.html">Pricing strategy for Southwest Florida sellers</a></li>
+    <li><a href="/resources/">More free tools and resources</a></li>
+  </ul>
+</div>
+
+<footer class="tbgf"></footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var county = 'lee';
+  var ESTOPPEL = 299;
+
+  function num(id) { var v = String($(id).value || '').replace(/[^0-9.]/g, ''); return v ? parseFloat(v) : 0; }
+  function money(n, cents) { return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: cents ? 2 : 0, maximumFractionDigits: cents ? 2 : 0 }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // Florida promulgated owner's title insurance rate (Rule 69O-186.003), minimum $100.
+  function titlePremium(price) {
+    var tiers = [[100000, 5.75], [1000000, 5.00], [5000000, 2.50], [10000000, 2.25], [Infinity, 2.00]];
+    var prev = 0, total = 0;
+    for (var i = 0; i < tiers.length && price > prev; i++) {
+      var top = Math.min(price, tiers[i][0]);
+      total += (top - prev) / 1000 * tiers[i][1];
+      prev = tiers[i][0];
+    }
+    return price > 0 ? Math.max(100, Math.round(total * 100) / 100) : 0;
+  }
+  // Florida deed doc stamps: $0.70 per $100 or fraction thereof (outside Miami-Dade).
+  function docStamps(price) { return price > 0 ? Math.ceil(price / 100) * 0.70 : 0; }
+
+  // Days owned this calendar year, through the day before closing (buyer owns closing day).
+  function proration(annual, closeStr, paid) {
+    if (!annual || !closeStr) return { amt: 0, days: 0 };
+    var d = new Date(closeStr + 'T12:00:00');
+    if (isNaN(d)) return { amt: 0, days: 0 };
+    var jan1 = new Date(d.getFullYear(), 0, 1, 12);
+    var yearDays = (new Date(d.getFullYear(), 11, 31, 12) - jan1) / 864e5 + 1;
+    var days = Math.round((d - jan1) / 864e5);
+    var sellerShare = annual * days / yearDays;
+    return paid ? { amt: -(annual - sellerShare), days: days } : { amt: sellerShare, days: days };
+  }
+
+  function setCounty(c) {
+    county = c;
+    document.querySelectorAll('[data-county]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-county') === c ? 'true' : 'false'); });
+    $('n-title').checked = (c === 'lee');
+    $('title-note').textContent = c === 'lee'
+      ? 'Customary for sellers in Lee County. Uncheck if your contract says the buyer pays.'
+      : 'In Collier County the buyer customarily pays. Check this only if your contract says you pay.';
+    calc();
+  }
+
+  function calc() {
+    var price = num('n-price');
+    var listPct = num('n-list'), coopPct = num('n-coop');
+    var lines = [];
+    var comm1 = price * listPct / 100, comm2 = price * coopPct / 100;
+    var stamps = docStamps(price);
+    var title = $('n-title').checked ? titlePremium(price) : 0;
+    var assoc = parseInt($('n-assoc').value, 10) || 0;
+    var estop = assoc * ESTOPPEL;
+    var pr = proration(num('n-tax'), $('n-close').value, $('n-taxpaid').checked);
+    var payoffs = num('n-loan1') + num('n-loan2');
+
+    lines.push(['Listing brokerage fee', listPct ? listPct + '% of the sale price' : 'Enter your agreed percentage above', comm1]);
+    lines.push(['Buyer’s agent compensation', coopPct ? coopPct + '% of the sale price' : 'None entered', comm2]);
+    lines.push(['Brokerage transaction fee', 'Downing-Frye Realty', num('n-txfee')]);
+    lines.push(['Florida doc stamps on the deed', '$0.70 per $100 of the sale price', stamps]);
+    lines.push(['Owner’s title insurance policy', $('n-title').checked ? 'Florida promulgated rate' : 'Paid by the buyer (not included)', title]);
+    lines.push(['Settlement, lien search & courier', 'Estimate', num('n-settle')]);
+    lines.push(['HOA / condo estoppel letters', assoc ? assoc + ' × about $' + ESTOPPEL : 'No associations', estop]);
+    if (pr.days || num('n-tax')) {
+      lines.push(['Property tax proration', !$('n-close').value ? 'Pick a closing date to calculate'
+        : (pr.amt >= 0 ? 'Credit to buyer for ' + pr.days + ' days this year' : 'Buyer reimburses you for the rest of the year'), pr.amt]);
+    }
+    if (num('n-conc')) lines.push(['Credits / concessions to the buyer', '', num('n-conc')]);
+    if (num('n-repair')) lines.push(['Repairs', '', num('n-repair')]);
+    if (num('n-warranty')) lines.push(['Home warranty', '', num('n-warranty')]);
+    if (num('n-other')) lines.push(['Other payoffs / assessments', '', num('n-other')]);
+
+    var costs = lines.reduce(function (s, l) { return s + l[2]; }, 0);
+    var net = price - payoffs - costs;
+
+    var rows = '<tr><td>Sale price</td><td>' + money(price) + '</td></tr>';
+    if (num('n-loan1')) rows += '<tr><td>Mortgage payoff</td><td>−' + money(num('n-loan1')) + '</td></tr>';
+    if (num('n-loan2')) rows += '<tr><td>Second mortgage / HELOC payoff</td><td>−' + money(num('n-loan2')) + '</td></tr>';
+    lines.forEach(function (l) {
+      var credit = l[2] < 0;
+      rows += '<tr' + (credit ? ' class="credit"' : '') + '><td>' + esc(l[0]) + (l[1] ? '<small>' + esc(l[1]) + '</small>' : '') + '</td><td>' + (credit ? '+' + money(-l[2], true) : '−' + money(l[2], l[2] % 1 !== 0)) + '</td></tr>';
+    });
+    rows += '<tr class="sub"><td>Total selling costs</td><td>−' + money(costs) + '</td></tr>';
+    rows += '<tr class="total"><td>Estimated net proceeds</td><td>' + money(net) + '</td></tr>';
+    $('o-items').innerHTML = rows;
+
+    $('o-net').textContent = money(net);
+    $('s-net').textContent = money(net);
+    $('o-sub').textContent = price ? 'Selling costs: ' + money(costs) + ' (' + (costs / price * 100).toFixed(1) + '% of the price)' : '';
+    var pos = function (v) { return price > 0 ? Math.max(0, v) / price * 100 : 0; };
+    $('b-net').style.width = pos(net) + '%';
+    $('b-pay').style.width = pos(payoffs) + '%';
+    $('b-cost').style.width = pos(costs) + '%';
+
+    var warn = '';
+    if ($('n-list').value.trim() === '') warn = 'Enter your listing brokerage fee above to include commissions in your estimate.';
+    if (net < 0 && price) warn = 'Your payoffs and costs are higher than the sale price. That’s called a short sale, and it has its own process. Call us at 239-350-4474 to talk through options.';
+    $('o-warn').hidden = !warn; $('o-warn').textContent = warn;
+
+    $('s-county').value = county === 'lee' ? 'Lee County' : 'Collier County';
+    $('s-price').value = money(price);
+    $('s-netval').value = money(net);
+    var det = ['Sale price: ' + money(price)];
+    if (num('n-loan1')) det.push('Mortgage payoff: -' + money(num('n-loan1')));
+    if (num('n-loan2')) det.push('Second mortgage / HELOC: -' + money(num('n-loan2')));
+    lines.forEach(function (l) { det.push(l[0] + ': ' + (l[2] < 0 ? '+' + money(-l[2]) : '-' + money(l[2]))); });
+    det.push('Total selling costs: -' + money(costs));
+    det.push('Estimated net proceeds: ' + money(net));
+    det.push('Closing date: ' + ($('n-close').value || 'not set') + ' | ' + $('s-county').value);
+    $('s-details').value = det.join('\n');
+    $('f-summary').value = (county === 'lee' ? 'Lee' : 'Collier') + ' County | Price ' + money(price) + ' | Payoffs ' + money(payoffs) + ' | Costs ' + money(costs) + ' | Est. net ' + money(net);
+  }
+
+  // Default closing date: 60 days out.
+  var d = new Date(); d.setDate(d.getDate() + 60);
+  $('n-close').value = d.toISOString().slice(0, 10);
+
+  document.querySelectorAll('[data-county]').forEach(function (b) { b.addEventListener('click', function () { setCounty(b.getAttribute('data-county')); }); });
+  $('net-form').addEventListener('input', calc);
+  $('net-form').addEventListener('change', calc);
+  // Format money inputs with commas when the visitor leaves the field.
+  document.querySelectorAll('.money input').forEach(function (i) {
+    i.addEventListener('blur', function () { var n = num(i.id); i.value = n ? Math.round(n).toLocaleString('en-US') : '0'; });
+  });
+  setCounty('lee');
+
+  // Phone: keep the running total visible while filling in the form.
+  if ('IntersectionObserver' in window) {
+    var formVisible = false, resultVisible = false, bar = $('sticky-net');
+    var upd = function () { bar.classList.toggle('show', formVisible && !resultVisible); };
+    new IntersectionObserver(function (e) { formVisible = e[0].isIntersecting; upd(); }).observe($('net-form'));
+    new IntersectionObserver(function (e) { resultVisible = e[0].isIntersecting; upd(); }).observe(document.querySelector('.net-hero'));
+  }
+
+  var tracked = false;
+  $('net-form').addEventListener('input', function () { if (!tracked && window.gtag) { tracked = true; gtag('event', 'net_sheet_used'); } });
+  $('net-print').addEventListener('click', function () { window.print(); });
+
+  function syncHow() {
+    $('s-email-wrap').hidden = !$('s-byemail').checked;
+    $('s-phone-wrap').hidden = !$('s-bytext').checked;
+  }
+  $('s-byemail').addEventListener('change', syncHow);
+  $('s-bytext').addEventListener('change', syncHow);
+
+  $('send-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, err = $('send-err');
+    var byE = $('s-byemail').checked, byT = $('s-bytext').checked;
+    var email = $('s-email').value.trim(), phone = $('s-phone').value.replace(/[^0-9]/g, '');
+    var msg = '';
+    if (!byE && !byT) msg = 'Please enter your email address.';
+    else if (byE && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) msg = 'Please enter a valid email address.';
+    else if (byT && phone.length < 10) msg = 'Please enter a 10-digit mobile number.';
+    if (msg) { err.textContent = msg; err.hidden = false; return; }
+    err.hidden = true;
+    if (!byE) $('s-email').value = '';
+    if (!byT) $('s-phone').value = '';
+    calc();
+    $('s-sendby').value = byE && byT ? 'Email and text' : (byE ? 'Email' : 'Text');
+    var btn = $('send-go'); btn.disabled = true; btn.textContent = 'Sending\u2026';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        f.hidden = true; $('send-thanks').hidden = false;
+        if (window.gtag) gtag('event', 'generate_lead', { form: 'net-sheet-send', send_by: $('s-sendby').value });
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Send My Estimate';
+        err.textContent = 'Sorry, that didn\u2019t go through. Please call or text us at 239-350-4474.'; err.hidden = false;
+      });
+  });
+
+  $('report-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    calc();
+    var btn = $('report-go'); btn.disabled = true; btn.textContent = 'Sending…';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        f.hidden = true; $('report-thanks').hidden = false;
+        if (window.gtag) gtag('event', 'generate_lead', { form: 'seller-net-sheet' });
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Get My Pricing Review & Net Sheet';
+        $('report-thanks').hidden = false;
+        $('report-thanks').textContent = 'Sorry, that didn’t go through. Please call or text us at 239-350-4474.';
+      });
+  });
+})();
+</script>
+</body>
+</html>
