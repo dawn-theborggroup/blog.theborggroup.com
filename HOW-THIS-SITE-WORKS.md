@@ -54,6 +54,10 @@ Added Nov 3, 2026. Each tool is its own folder with an index.html, so URLs are c
   follows county custom (Collier: buyer pays, box checked; Lee: seller pays, box unchecked). Lender's policy =
   $25 simultaneous rate + 10% of the promulgated premium on the loan + $50 endorsements (estimate). Mortgage
   doc stamps $0.35/$100 of the loan, intangible tax 0.2%, recording ~$190, 3 months tax + 2 months insurance reserves.
+- Florida Property Tax & Amendment 3 Savings Calculator (/resources/florida-property-tax-calculator/), added Nov 4, 2026.
+  Two modes: staying (2026 vs 2027/2028 with SOH cap growth) and selling & buying (portability: full benefit
+  when moving up, proportional when downsizing, $500,000 cap). Non-school exemption: 2026 $25,000 + up to $26,411;
+  2027 $150,000; 2028 $250,000. SOH cap default 2.7% (2026). Assumes resident by Dec 31, 2026.
 
 ## Buy With Us page: /buy-with-us/
 Added Nov 3, 2026. The main menu's "Buy" link points here. Home search form submits to
@@ -68,7 +72,7 @@ doesn't appear under Forms, trigger a fresh deploy.
 Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-alerts (/buy-with-us/),
 seller-net-sheet and net-sheet-send (/resources/seller-net-sheet/), mortgage-send
 (/resources/mortgage-affordability-calculator/), closing-cost-send
-(/resources/buyer-closing-cost-calculator/). Every submission is also POSTed to a Zapier webhook
+(/resources/buyer-closing-cost-calculator/), tax-savings-send (/resources/florida-property-tax-calculator/). Every submission is also POSTed to a Zapier webhook
 (workflow "blog-forms-to-boldtrail-and-net-sheet-email"), which emails the visitor their results
 from dawn@ and creates the BoldTrail contact. A new "email me my results" form needs an entry in that
 workflow's FORMS map and an email template. Email alerts: Forms -> Submission notifications
