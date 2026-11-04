@@ -10,7 +10,7 @@
    "soldDays": 45,
    "sf": {
     "active": 1948,
-    "pending": null,
+    "pending": 382,
     "sold": 491,
     "medianSold": 790000,
     "medianList": 1081000,
@@ -41,7 +41,8 @@
     "Condo active $425-550K": 343,
     "Condo active $550-750K": 282,
     "Condo active $750K-1.25M": 275,
-    "Condo active $1.25M+": 432
+    "Condo active $1.25M+": 432,
+    "SF pending": 385
    }
   },
   {
