@@ -56,4 +56,6 @@ collects custom-search requests (turn on email notifications in Netlify).
 Form detection was turned on for this project on Nov 3, 2026 (Project configuration -> Forms).
 Netlify only picks up new forms on a deploy that happens after detection is on. If a new form
 doesn't appear under Forms, trigger a fresh deploy.
-Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-alerts (/buy-with-us/).
+Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-alerts (/buy-with-us/),
+seller-net-sheet (/resources/seller-net-sheet/). Email alerts: Forms -> Submission notifications
+("any form" -> dawn@theborggroup.com; only Netlify team members can receive them).
