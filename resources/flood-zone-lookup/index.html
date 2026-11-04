@@ -152,7 +152,7 @@
     </div>
 
     <div class="report-box" id="report-box">
-      <h3>Email or text this flood report to yourself</h3>
+      <h3>Email this flood report to yourself</h3>
       <p>Get this result, what the zone means, and the insurance questions to ask before you make an offer, sent straight to you.</p>
       <form name="flood-report" id="report-form" method="POST" action="/resources/flood-zone-lookup/" data-netlify="true" netlify-honeypot="company">
         <input type="hidden" name="form-name" value="flood-report">
@@ -165,7 +165,7 @@
         <input type="hidden" name="send_by" id="f-sendby">
         <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <div class="report-grid">
-          <div class="full send-how" role="group" aria-label="How should we send it?">
+          <div class="full send-how" role="group" aria-label="How should we send it?" hidden>
             <label><input type="checkbox" id="f-byemail" checked> Email it to me</label>
             <label><input type="checkbox" id="f-bytext"> Text it to me</label>
           </div>
@@ -192,9 +192,9 @@
           <div class="full"><button class="btn" type="submit" id="report-go">Send My Flood Report</button></div>
         </div>
         <p class="send-err" id="report-err" hidden></p>
-        <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email or text about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
+        <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information.</p>
       </form>
-      <p class="report-thanks" id="report-thanks" hidden>Sent! Check your inbox or messages in the next few minutes.</p>
+      <p class="report-thanks" id="report-thanks" hidden>Sent! Check your inbox in the next few minutes (and your spam folder, just in case).</p>
     </div>
   </div>
 </section>
@@ -404,7 +404,7 @@
     var byE = $('f-byemail').checked, byT = $('f-bytext').checked;
     var email = $('f-email').value.trim(), phone = $('f-phone').value.replace(/[^0-9]/g, '');
     var msg = '';
-    if (!byE && !byT) msg = 'Choose email, text, or both.';
+    if (!byE && !byT) msg = 'Please enter your email address.';
     else if (byE && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) msg = 'Please enter a valid email address.';
     else if (byT && phone.length < 10) msg = 'Please enter a 10-digit mobile number.';
     if (msg) { err.textContent = msg; err.hidden = false; return; }
