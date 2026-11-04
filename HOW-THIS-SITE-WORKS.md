@@ -85,3 +85,22 @@ seller-net-sheet and net-sheet-send (/resources/seller-net-sheet/), mortgage-sen
 from dawn@ and creates the BoldTrail contact. A new "email me my results" form needs an entry in that
 workflow's FORMS map and an email template. Email alerts: Forms -> Submission notifications
 ("any form" -> dawn@theborggroup.com; only Netlify team members can receive them).
+
+## Daily market numbers: ticker + Southwest Florida Housing Market Today page
+Added Nov 4, 2026.
+- Data: data/market-ticker.json, written every morning by the scheduled daily market task (Part D),
+  which runs `python3 scripts/market/ticker_check.py scripts/market/ticker_config.json data/market-ticker.json data/market-ticker.json`
+  and pushes the file to main. Netlify rebuilds on that push.
+- scripts/market/ticker_config.json holds Dawn's OneHome saved-search links per area (Naples, Bonita Springs,
+  Bonita & Fort Myers Beach, Estero, Fort Myers, Cape Coral). Big areas are split into price bands to stay under
+  OneHome's 500-result limit; listings are de-duplicated by MLS number. Sold = last 45 days (Cape Coral 30).
+  An "omit" entry (e.g. "sf.pending") hides a number while its saved search is missing.
+  The script reads each search through OneHome's GetSavedListings request (50 at a time). If a search fails twice,
+  that area keeps its previous numbers and is marked "stale".
+- Single-family = PropertySubType SingleFamilyResidence or Detached; condo = Condominium, Attached, Townhouse,
+  Villa, StockCooperative. Duplexes and manufactured homes are left out.
+- scripts/build-market-snapshot.mjs (first build step) turns the data into
+  /resources/southwest-florida-housing-market/ (Q&A text, tables, FAQPage + Dataset schema, dateModified = data date).
+- widgets/market-ticker/ is the scrolling ticker embedded with an iframe in the Community Guides section of the
+  theborggroup.com homepage (BoldTrail). It reads /data/market-ticker.json.
+- To change a saved search: update the link in scripts/market/ticker_config.json.

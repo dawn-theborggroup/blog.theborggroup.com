@@ -1,0 +1,245 @@
+{
+ "areas": [
+  {
+   "name": "Naples",
+   "searches": [
+    {
+     "label": "Condo sold 45 days",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyNzIiLCJzZXRrZXkiOiI2MDAiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=08a3c639-a366-391d-a71e-aa05c18c47df&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF sold 45 days under $1M",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyNzkiLCJzZXRrZXkiOiI3OTMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=6697f38f-940b-340d-9935-e50a09e951a2&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF sold 45 days over $1M",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODAiLCJzZXRrZXkiOiI5NTMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=4ff5285d-9e74-3954-a439-e71d8d18a48a&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyNjIiLCJzZXRrZXkiOiIyODUiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=1ce32749-cfd0-3ae3-9853-8b5bb20cb549&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active under $600K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNTgiLCJzZXRrZXkiOiI0OCIsImVtYWlsIjoiZGF3bkB0aGVib3JnZ3JvdXAuY29tIiwicmVzb3VyY2VpZCI6MCwiYWdlbnRpZCI6OTA5NTAsImlzZGVsdGEiOmZhbHNlLCJWaWV3TW9kZSI6IjIiLCJzb3VyY2UiOiJNYXRyaXhVSSJ9&SMS=0&searchId=22bb994a-1281-3f8d-b2d5-069a0895c009&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $600-800K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNTkiLCJzZXRrZXkiOiI5MDkiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=f4e60b69-c2fc-3a28-895d-d9cbc0a65dfb&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $800K-1.1M",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjEiLCJzZXRrZXkiOiI0NzgiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=38f77660-fc3b-3053-833e-250a38b3620a&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $1.1-2M",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjIiLCJzZXRrZXkiOiIxMiIsImVtYWlsIjoiZGF3bkB0aGVib3JnZ3JvdXAuY29tIiwicmVzb3VyY2VpZCI6MCwiYWdlbnRpZCI6OTA5NTAsImlzZGVsdGEiOmZhbHNlLCJWaWV3TW9kZSI6IjIiLCJzb3VyY2UiOiJNYXRyaXhVSSJ9&SMS=0&searchId=be61b8ea-703d-314c-84a0-b49fb45ba6c8&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $2-3M",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjMiLCJzZXRrZXkiOiIyNSIsImVtYWlsIjoiZGF3bkB0aGVib3JnZ3JvdXAuY29tIiwicmVzb3VyY2VpZCI6MCwiYWdlbnRpZCI6OTA5NTAsImlzZGVsdGEiOmZhbHNlLCJWaWV3TW9kZSI6IjIiLCJzb3VyY2UiOiJNYXRyaXhVSSJ9&SMS=0&searchId=47b0db14-edee-3315-b4cb-eda20949b6b9&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $3M+",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjQiLCJzZXRrZXkiOiI3IiwiZW1haWwiOiJkYXduQHRoZWJvcmdncm91cC5jb20iLCJyZXNvdXJjZWlkIjowLCJhZ2VudGlkIjo5MDk1MCwiaXNkZWx0YSI6ZmFsc2UsIlZpZXdNb2RlIjoiMiIsInNvdXJjZSI6Ik1hdHJpeFVJIn0%3D&SMS=0&searchId=eec1f498-ba10-371e-ba18-d5d8105e65a2&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active under $250K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjUiLCJzZXRrZXkiOiI4ODMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=b0e18ac3-15ba-39b8-bbf2-1f01ba1b91ae&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $250-325K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjYiLCJzZXRrZXkiOiIxMzUiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=a5d8984d-c1ee-3950-a271-05da611d5a39&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $325-425K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjciLCJzZXRrZXkiOiI0NDQiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=376e0b46-63ee-3852-8bc5-d9f7ea844d75&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $425-550K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjgiLCJzZXRrZXkiOiI5MzAiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=816ad9cf-138d-3d1f-9d8b-38f8eccf8813&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $550-750K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNjkiLCJzZXRrZXkiOiIxNTYiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=3fa7eff6-bc43-365b-87c0-69e30c3911ec&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $750K-1.25M",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNzAiLCJzZXRrZXkiOiI1NzAiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=89a2640d-ccc5-308e-a5c4-5b0ad72d7f87&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $1.25M+",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzNzEiLCJzZXRrZXkiOiIyNjMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=8e2366ae-9ea2-3ded-b53f-70bae9338603&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    }
+   ],
+   "id": "naples",
+   "soldDays": 45,
+   "label": "Naples",
+   "url": "https://communities.theborggroup.com/naples/",
+   "omit": [
+    "sf.pending"
+   ]
+  },
+  {
+   "name": "Bonita Springs",
+   "searches": [
+    {
+     "label": "Condo active",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODIiLCJzZXRrZXkiOiI2NDYiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=35df3078-6d23-34ba-8d40-11c0302fe6b1&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODMiLCJzZXRrZXkiOiI1MTciLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=c96a64ed-d4ea-3e3f-90cc-435175552184&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active+pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODEiLCJzZXRrZXkiOiIyNDQiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=678b61e9-8f16-3393-8723-eca14e2a61af&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF + condo sold 45 days",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODUiLCJzZXRrZXkiOiI1OTMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=135a048b-cae3-37d7-8690-352c0e5a0479&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    }
+   ],
+   "id": "bonita-springs",
+   "soldDays": 45,
+   "label": "Bonita Springs",
+   "url": "https://communities.theborggroup.com/bonita-springs/"
+  },
+  {
+   "name": "Bonita Beach + Fort Myers Beach",
+   "searches": [
+    {
+     "label": "Condo active+pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODciLCJzZXRrZXkiOiI4NDUiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=00691246-4a07-3105-91c8-37f2460ffdea&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active+pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODYiLCJzZXRrZXkiOiIzMTAiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=88b2af35-b3f0-38d7-be2e-0b09ee950265&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF + condo sold 45 days",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODgiLCJzZXRrZXkiOiI1OTAiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=f54918c0-9945-3db1-b284-913b143a0f57&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    }
+   ],
+   "id": "beaches",
+   "soldDays": 45,
+   "label": "Bonita & Fort Myers Beach",
+   "url": "https://communities.theborggroup.com/bonita-beach/"
+  },
+  {
+   "name": "Estero",
+   "searches": [
+    {
+     "label": "Condo active+pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyOTkiLCJzZXRrZXkiOiIxMDEiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=ef4f3b38-057d-3daa-a01b-2c94419c850a&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active+pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQyODkiLCJzZXRrZXkiOiI5NjUiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=47889494-e29f-3360-b88f-5f311a582931&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF + condo sold 45 days",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDEiLCJzZXRrZXkiOiIxNjUiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=5ac66165-0e7b-3ca1-99f9-8164152b9035&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    }
+   ],
+   "id": "estero",
+   "soldDays": 45,
+   "label": "Estero",
+   "url": "https://communities.theborggroup.com/estero/"
+  },
+  {
+   "name": "Fort Myers",
+   "searches": [
+    {
+     "label": "Condo active under $200K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDYiLCJzZXRrZXkiOiIzNjkiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=fa3ee112-847c-34b7-a890-2142ae6a73c4&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $200-300K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDgiLCJzZXRrZXkiOiIyOCIsImVtYWlsIjoiZGF3bkB0aGVib3JnZ3JvdXAuY29tIiwicmVzb3VyY2VpZCI6MCwiYWdlbnRpZCI6OTA5NTAsImlzZGVsdGEiOmZhbHNlLCJWaWV3TW9kZSI6IjIiLCJzb3VyY2UiOiJNYXRyaXhVSSJ9&SMS=0&searchId=c0e178fd-9106-34ea-aaba-940394e6dc42&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active $300K+",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDkiLCJzZXRrZXkiOiI4MCIsImVtYWlsIjoiZGF3bkB0aGVib3JnZ3JvdXAuY29tIiwicmVzb3VyY2VpZCI6MCwiYWdlbnRpZCI6OTA5NTAsImlzZGVsdGEiOmZhbHNlLCJWaWV3TW9kZSI6IjIiLCJzb3VyY2UiOiJNYXRyaXhVSSJ9&SMS=0&searchId=e2d0a6fe-5d29-341c-9229-1dcb9c1de44e&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTIiLCJzZXRrZXkiOiI2NzIiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=c96f0843-3ba6-3e6f-90a0-303f9f10ece4&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo sold 45 days",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTMiLCJzZXRrZXkiOiIyMTMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=01e0fe8c-b17f-308f-8edb-3605babd3d6a&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active under $400K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDMiLCJzZXRrZXkiOiI0MzAiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=37f88480-618c-39f9-8937-93307ae5a8c4&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $400-600K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDQiLCJzZXRrZXkiOiIyMzkiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=c4e9b01d-7da5-33f8-a758-d17973c35071&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $600K+",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMDUiLCJzZXRrZXkiOiI1OTkiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=916a799e-d01f-33ae-add7-f596b8e26003&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF pending",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTEiLCJzZXRrZXkiOiIyNTMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=adf29422-6fbb-3d03-8287-a1398489c65f&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF sold 45 days",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTUiLCJzZXRrZXkiOiI1NyIsImVtYWlsIjoiZGF3bkB0aGVib3JnZ3JvdXAuY29tIiwicmVzb3VyY2VpZCI6MCwiYWdlbnRpZCI6OTA5NTAsImlzZGVsdGEiOmZhbHNlLCJWaWV3TW9kZSI6IjIiLCJzb3VyY2UiOiJNYXRyaXhVSSJ9&SMS=0&searchId=06c4f681-b57a-3999-8948-28b1f9ac156d&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    }
+   ],
+   "id": "fort-myers",
+   "soldDays": 45,
+   "label": "Fort Myers",
+   "url": "https://communities.theborggroup.com/fort-myers/"
+  },
+  {
+   "name": "Cape Coral",
+   "searches": [
+    {
+     "label": "SF active under $300K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTYiLCJzZXRrZXkiOiI4NDMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=77182fe6-7da5-3e87-9a32-b1846b3bde64&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $300-340K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTciLCJzZXRrZXkiOiI2NDMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=485d89dd-4212-324e-9f64-c87c41bae24c&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $340-400K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMTkiLCJzZXRrZXkiOiI5NDkiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=ac2e6243-36c7-3db5-82f8-8801026d41d3&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $400-500K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMjEiLCJzZXRrZXkiOiI2NTQiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=45888dfd-9cd4-3924-ab70-10f7bdc35f5f&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $500-700K",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMjIiLCJzZXRrZXkiOiI5MDgiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=ad0caa24-f804-3ae4-8649-30bc181f12ba&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "SF active $700K+",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMjQiLCJzZXRrZXkiOiI2MzYiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=7ba398ec-9fab-3e91-a8a9-b58495ecb549&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Condo active, all prices",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMjUiLCJzZXRrZXkiOiI1NjMiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=20b9a1b3-b24f-31ee-ae08-ce2a02a9b290&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Pending SF + condo",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMzUiLCJzZXRrZXkiOiI5MTYiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=5486c332-c6b4-38ce-95fd-e747e4d51b43&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    },
+    {
+     "label": "Sold last 30 days SF + condo",
+     "url": "https://agent.onehome.com/en-US/properties/map?token=eyJPU04iOiJTV0ZMIiwidHlwZSI6IjEiLCJzZXRpZCI6IjIwNzQzMzkiLCJzZXRrZXkiOiIxMDQiLCJlbWFpbCI6ImRhd25AdGhlYm9yZ2dyb3VwLmNvbSIsInJlc291cmNlaWQiOjAsImFnZW50aWQiOjkwOTUwLCJpc2RlbHRhIjpmYWxzZSwiVmlld01vZGUiOiIyIiwic291cmNlIjoiTWF0cml4VUkifQ%3D%3D&SMS=0&searchId=3a6f9837-1800-3cc9-b994-2bbf129e55b0&group=3422e977-0254-3223-a634-64bf6c97f1b3"
+    }
+   ],
+   "id": "cape-coral",
+   "soldDays": 30,
+   "label": "Cape Coral",
+   "url": "https://communities.theborggroup.com/cape-coral/"
+  }
+ ]
+}
