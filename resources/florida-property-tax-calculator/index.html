@@ -230,7 +230,7 @@
       <div class="small est-note">Estimate only, at today's millage rates. Your TRIM notice and tax bill are the official numbers.</div>
     </div>
     <div class="stat2">
-      <div><div class="v" id="o-s1">$0</div><div class="l" id="o-l1">Save Our Homes saves you each year</div></div>
+      <div><div class="v" id="o-s1">$0</div><div class="l" id="o-l1">Your assessed value, capped by Save Our Homes</div></div>
       <div><div class="v" id="o-s2">$0</div><div class="l" id="o-l2">Amendment 3 saves you in 2027</div></div>
     </div>
   </div>
@@ -290,7 +290,7 @@
   </div>
 
   <h2>How do Save Our Homes and Amendment 3 work together?</h2>
-  <p>They stack. Save Our Homes lowers the value you're taxed on by capping how fast your assessed value can rise, so long-time owners are often assessed well below market value. Amendment 3 then takes a bigger exemption off that assessed value for county, city and district taxes. School taxes still use the $25,000 exemption, which doesn't change. The longer you've owned your home, the more Save Our Homes is doing for you, and Amendment 3 adds to it.</p>
+  <p>Save Our Homes sets the value you're taxed on. Amendment 3 takes a bigger exemption off that value. Save Our Homes caps how fast your homestead's assessed value can rise each year, so long-time owners are often assessed well below market value. That's simply how your bill is figured, not a separate check you get. Amendment 3 then takes a larger exemption off that assessed value for county, city and district taxes. School taxes still use the $25,000 exemption, which doesn't change. Where Save Our Homes turns into dollars you can carry is when you move: portability lets you bring that gap with you to your next Florida homestead.</p>
 
   <h2>What happens to my taxes if I sell and buy another Florida home?</h2>
   <p>Your new home's assessed value starts at its market value, but portability lets you bring your Save Our Homes benefit with you, up to $500,000. Moving up, you transfer the full benefit. Downsizing, you transfer the same percentage of value it protected before. Because you were already a Florida resident before December 31, 2026, you keep the larger Amendment 3 exemption on the new home too. You have to apply for both the homestead exemption and portability by March 1 of the first year, and you have up to three tax years after leaving your old homestead to use portability. Learn more in our guide to <a href="/posts/save-our-homes-portability-southwest-florida.html">Save Our Homes portability</a>.</p>
@@ -366,8 +366,8 @@
       var years = [2026, 2027, 2028], rows = [];
       years.forEach(function (y, i) {
         var a = capGrow(av, market, i);
-        var withA3 = tax(a, county, y), without = tax(a, county, 2026), noSOH = tax(market, county, y);
-        rows.push({ y: y, av: a, tax: withA3, noA3: without, a3save: without - withA3, sohSave: noSOH - withA3 });
+        var withA3 = tax(a, county, y), without = tax(a, county, 2026);
+        rows.push({ y: y, av: a, tax: withA3, noA3: without, a3save: without - withA3 });
       });
       var t = '<thead><tr><th>Year</th><th>Assessed</th><th>Old rules</th><th>Amend. 3</th><th>You save</th></tr></thead><tbody>';
       rows.forEach(function (x) {
@@ -379,16 +379,15 @@
       $('o-k').textContent = 'Amendment 3 savings, every year from 2028';
       $('o-big').textContent = money(y28.a3save) + '/yr';
       $('o-sub').textContent = 'Estimated 2028 tax bill: ' + money(y28.tax) + ' (about ' + money(y28.tax / 12) + ' a month)';
-      $('o-s1').textContent = money(rows[0].sohSave); $('o-l1').textContent = 'Save Our Homes saves you this year';
+      $('o-s1').textContent = money(av); $('o-l1').textContent = 'Your assessed value, capped by Save Our Homes';
       $('o-s2').textContent = money(y27.a3save); $('o-l2').textContent = 'Amendment 3 saves you in 2027';
       note = soh > 0
-        ? '<strong>Your Save Our Homes benefit is ' + money(soh) + '.</strong> That\'s the gap between your market and assessed values, and it keeps about ' + money(rows[0].sohSave) + ' a year off your bill. If you move within Florida, you can carry up to $500,000 of it to your next home. Switch to "I\'m selling & buying" to see how.'
+        ? '<strong>Why your assessed value is lower than your market value.</strong> Save Our Homes limits how much your homestead\'s assessed value can rise each year, so you\'re taxed on ' + money(av) + ' instead of ' + money(market) + '. That\'s already built into the numbers above. The ' + money(soh) + ' gap becomes something you can use when you move: portability lets you carry up to $500,000 of it to your next Florida homestead. Switch to "I\'m selling & buying" to see what that\'s worth.'
         : 'Your assessed value equals your market value, so Save Our Homes isn\'t lowering your bill yet. It starts protecting you as your market value rises.';
       headline = money(y28.a3save) + '/yr in Amendment 3 savings from 2028';
-      det.push('Market value: ' + money(market), 'Assessed value (2026): ' + money(av), 'Save Our Homes benefit: ' + money(soh));
+      det.push('Market value: ' + money(market), 'Assessed value (2026): ' + money(av), 'Save Our Homes benefit (portable if you move): ' + money(soh));
       rows.forEach(function (x) { det.push(x.y + ' estimated tax: ' + money(x.tax)); if (x.a3save) det.push(x.y + ' Amendment 3 savings: ' + money(x.a3save)); });
-      det.push('Save Our Homes saves you now: ' + money(rows[0].sohSave) + '/yr');
-      det.push('Estimated yearly savings from 2028: ' + money(y28.a3save + rows[0].sohSave));
+      det.push('Estimated yearly savings from 2028: ' + money(y28.a3save));
       det.push(MILLS[county].name + ' | Staying in my home | SOH cap ' + num('t-cap') + '%');
     } else {
       var price = num('t-newprice'), fy = parseInt($('t-firstyear').value, 10);
