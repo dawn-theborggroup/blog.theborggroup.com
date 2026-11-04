@@ -120,16 +120,6 @@
   table.items tr.sub td { font-weight: 500; color: var(--charcoal); border-bottom: 2px solid var(--charcoal); }
   table.items tr.credit td:last-child { color: #2f6b4f; }
   .est-note { margin-top: .35rem; font-size: .76rem; color: var(--silver); font-style: italic; }
-  .send-box { margin-top: var(--space-3); padding: var(--space-3); border: 1px solid var(--rose-muted); border-radius: 2px; background: var(--white); }
-  .send-box h3 { font-size: 1.3rem; margin: 0 0 .3rem; }
-  .send-box p { margin: 0 0 var(--space-2); font-size: .93rem; }
-  .send-grid { display: grid; gap: .75rem; grid-template-columns: 1fr 1fr; }
-  .send-grid .full { grid-column: 1 / -1; }
-  @media (max-width: 560px) { .send-grid { grid-template-columns: 1fr; } }
-  .send-how { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: .92rem; }
-  .send-how label { display: flex; gap: .45rem; align-items: center; cursor: pointer; }
-  .send-how input { accent-color: var(--dusty-rose); width: 1rem; height: 1rem; }
-  .send-err { color: #9b3d2e; font-size: .85rem; margin: .5rem 0 0; }
   .sticky-net { display: none; }
   @media (max-width: 760px) {
     .sticky-net { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1.1rem; background: var(--charcoal); color: var(--cream); box-shadow: 0 -8px 24px -12px rgba(0,0,0,.5); transform: translateY(110%); transition: transform .25s ease; }
@@ -318,7 +308,7 @@
         <div class="full"><button class="btn" type="submit" id="send-go">Send My Estimate</button></div>
       </div>
       <p class="send-err" id="send-err" hidden></p>
-      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email or text about your estimate and your home. Message and data rates may apply. Reply STOP to opt out of texts. We never sell or share your information.</p>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by email or text about your request. This tool provides information and knowledge only. We never spam, and we will never sell or share your information. Message and data rates may apply; reply STOP to opt out of texts.</p>
     </form>
     <p class="report-thanks" id="send-thanks" hidden>Sent! Check your inbox or messages in the next few minutes. Mark or Dawn may also reach out to answer any questions.</p>
   </div>
@@ -355,7 +345,7 @@
         </div>
         <div class="full"><button class="btn" type="submit" id="report-go">Get My Pricing Review &amp; Net Sheet</button></div>
       </div>
-      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by phone, text or email about your home. We never sell or share your information. If your home is currently listed with another brokerage, this is not a solicitation of that listing.</p>
+      <p class="report-privacy">By sending this, you agree that The Borg Group may contact you by phone, text or email about your home. We never spam, and we will never sell or share your information. If your home is currently listed with another brokerage, this is not a solicitation of that listing.</p>
     </form>
     <p class="report-thanks" id="report-thanks" hidden>Thank you! Mark or Dawn will be in touch shortly with your pricing review.</p>
   </div>
@@ -363,7 +353,7 @@
 
 <div class="sticky-net" id="sticky-net" aria-hidden="true"><div><div class="k">Estimated net</div><div class="v" id="s-net">$0</div></div><a href="#o-items">See the breakdown</a></div>
 
-<p class="tool-disclaimer">This calculator provides an estimate for planning purposes only. It is not a closing statement, a settlement statement, or legal, tax or financial advice. Actual figures depend on your contract, your lender's payoff letter, your title company's fees, your association's estoppel charges and your county's tax bill. Commissions are negotiable. Title insurance is calculated at Florida's promulgated owner's rates; county customs on who pays are negotiable in the contract.</p>
+<p class="tool-disclaimer">This calculator provides information and knowledge only: an estimate for planning purposes. It is not a closing statement, a settlement statement, or legal, tax or financial advice. Actual figures depend on your contract, your lender's payoff letter, your title company's fees, your association's estoppel charges and your county's tax bill. Commissions are negotiable. Title insurance is calculated at Florida's promulgated owner's rates; county customs on who pays are negotiable in the contract.</p>
 
 <article class="post-body">
 
