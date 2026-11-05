@@ -248,12 +248,30 @@ const HOME = "index.html";
 if (existsSync(HOME)) {
   const totPending = areas.reduce((t, a) => t + (a.sf?.pending || 0) + (a.condo?.pending || 0), 0);
   const totSold = areas.reduce((t, a) => t + (a.sf?.sold || 0) + (a.condo?.sold || 0), 0);
+  const k = (n) => (n == null ? "" : n >= 1e6 ? "$" + (n / 1e6).toFixed(2).replace(/\.?0+$/, "") + "M" : "$" + Math.round(n / 1000) + "K");
+  const seg = (label, s) => {
+    if (!s) return "";
+    const p = [];
+    if (s.active) p.push(`<b>${num(s.active)}</b> for sale`);
+    if (s.pending) p.push(`<b>${num(s.pending)}</b> pending`);
+    if (s.medianSold) p.push(`median sold <b>${k(s.medianSold)}</b>`);
+    if (s.saleToList) p.push(`<b>${pct(s.saleToList)}</b> of list`);
+    return p.length ? `<span class="mt-seg"><span class="mt-t">${label}</span> ${p.join(' <span class="mt-sep">&middot;</span> ')}</span>` : "";
+  };
+  const items = areas
+    .map((a) => `<a class="mt-item" href="/resources/southwest-florida-housing-market/#${esc(a.id)}"><span class="mt-area">${esc(a.name)}</span>${seg("Single-family", a.sf)}<span class="mt-bar">|</span>${seg("Condo", a.condo)}</a>`)
+    .join("");
   const strip = `<!-- market-today:start (filled in at deploy time by scripts/build-market-snapshot.mjs) -->
-  <div class="market-today-wrap"><a class="market-today" href="/resources/southwest-florida-housing-market/">
-    <span class="mt-k"><i aria-hidden="true"></i>Southwest Florida market today</span>
-    <span class="mt-v"><b>${num(totActive)}</b> homes &amp; condos for sale <span class="mt-sep">&middot;</span> <b>${num(totPending)}</b> pending <span class="mt-sep">&middot;</span> <b>${num(totSold)}</b> recently closed</span>
-    <span class="mt-go">See every area, updated ${esc(when)} &rarr;</span>
-  </a></div>
+  <section class="market-today-wrap" aria-label="Southwest Florida market today">
+    <div class="market-today">
+      <a class="mt-head" href="/resources/southwest-florida-housing-market/">
+        <span class="mt-k"><i aria-hidden="true"></i>Southwest Florida market today</span>
+        <span class="mt-v"><b>${num(totActive)}</b> homes &amp; condos for sale <span class="mt-sep">&middot;</span> <b>${num(totPending)}</b> pending <span class="mt-sep">&middot;</span> <b>${num(totSold)}</b> recently closed</span>
+        <span class="mt-go">See every area, updated ${esc(when)} &rarr;</span>
+      </a>
+      <div class="mt-belt"><div class="mt-track">${items}<span class="mt-dup" aria-hidden="true">${items.replace(/<a /g, '<a tabindex="-1" ')}</span></div></div>
+    </div>
+  </section>
   <!-- market-today:end -->`;
   const home = readFileSync(HOME, "utf8");
   const re = /<!-- market-today:start[\s\S]*?<!-- market-today:end -->/;
