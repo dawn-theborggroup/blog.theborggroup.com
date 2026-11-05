@@ -276,6 +276,31 @@ if (existsSync(HOME)) {
   const home = readFileSync(HOME, "utf8");
   const re = /<!-- market-today:start[\s\S]*?<!-- market-today:end -->/;
   if (re.test(home)) writeFileSync(HOME, home.replace(re, strip));
+
+  // Resources page: the market snapshot is the page's headline feature (stat card + scrolling areas).
+  const RES = "resources/index.html";
+  if (existsSync(RES)) {
+    const hero = `<!-- market-hero:start (filled in at deploy time by scripts/build-market-snapshot.mjs) -->
+    <a class="mk-card" href="/resources/southwest-florida-housing-market/" aria-label="Southwest Florida market today, updated ${esc(when)}">
+      <span class="mk-card__k"><i aria-hidden="true"></i>Southwest Florida market today</span>
+      <span class="mk-card__stats">
+        <span class="mk-stat"><b>${num(totActive)}</b><em>homes &amp; condos for sale</em></span>
+        <span class="mk-stat"><b>${num(totPending)}</b><em>pending sales</em></span>
+        <span class="mk-stat"><b>${num(totSold)}</b><em>recently closed</em></span>
+      </span>
+      <span class="mk-card__go">Updated ${esc(when)} &middot; See every area &rarr;</span>
+    </a>
+    <!-- market-hero:end -->`;
+    const belt = `<!-- market-belt:start (filled in at deploy time by scripts/build-market-snapshot.mjs) -->
+<section class="market-today-wrap" aria-label="Today's numbers by area">
+  <div class="market-today"><div class="mt-belt"><div class="mt-track">${items}<span class="mt-dup" aria-hidden="true">${items.replace(/<a /g, '<a tabindex="-1" ')}</span></div></div></div>
+</section>
+<!-- market-belt:end -->`;
+    let res = readFileSync(RES, "utf8");
+    res = res.replace(/<!-- market-hero:start[\s\S]*?<!-- market-hero:end -->/, hero);
+    res = res.replace(/<!-- market-belt:start[\s\S]*?<!-- market-belt:end -->/, belt);
+    writeFileSync(RES, res);
+  }
 }
 
 mkdirSync(OUT_DIR, { recursive: true });

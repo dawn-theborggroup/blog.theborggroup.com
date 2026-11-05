@@ -100,6 +100,8 @@ workflow's FORMS map and an email template. Email alerts: Forms -> Submission no
 ("any form" -> dawn@theborggroup.com; only Netlify team members can receive them).
 
 ## Daily market numbers: ticker + Southwest Florida Housing Market Today page
+The builder also fills three marker blocks: market-today (full-width band under the header on the blog home),
+and market-hero + market-belt on /resources/ (headline stat card and scrolling areas band). Keep the markers.
 Added Nov 4, 2026.
 - Data: data/market-ticker.json, written every morning by the scheduled daily market task (Part D),
   which runs `python3 scripts/market/ticker_check.py scripts/market/ticker_config.json data/market-ticker.json data/market-ticker.json`
