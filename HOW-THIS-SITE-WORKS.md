@@ -58,6 +58,12 @@ Added Nov 3, 2026. Each tool is its own folder with an index.html, so URLs are c
   Two modes: staying (2026 vs 2027/2028 with SOH cap growth) and selling & buying (portability: full benefit
   when moving up, proportional when downsizing, $500,000 cap). Non-school exemption: 2026 $25,000 + up to $26,411;
   2027 $150,000; 2028 $250,000. SOH cap default 2.7% (2026). Assumes resident by Dec 31, 2026.
+- Florida Title Insurance Calculator (/resources/florida-title-insurance-calculator/), added Nov 5, 2026.
+  Rule 69O-186.003 rates: original $5.75/$5.00/$2.50/$2.25/$2.00 per $1,000 (to $100K/$1M/$5M/$10M/above),
+  reissue $3.30/$3.00/$2.00/$1.50 (to $100K/$1M/$10M/above) up to the prior policy amount when the seller's
+  owner's policy is under 3 years old; coverage rounded up to the next $100; $100 minimum. Lender's policy =
+  $25 simultaneous + original rate on any loan above price + Form 9 at 10% of the loan premium + $50 endorsements.
+  Owner's policy custom: Lee seller pays, Collier buyer pays. Form title-insurance-send (lead_type = buyer/seller).
 - Florida Homestead & Exemption Checker (/resources/florida-homestead-exemption/), added Nov 4, 2026.
   Checklist of exemptions by situation (already homesteaded / buying by Dec 31, 2026 / FL resident buying 2027+ /
   new resident 2027+ gets $50,000 non-school until year five). Stackable $5,000 exemptions (widow(er), blind or
@@ -80,7 +86,7 @@ Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-a
 seller-net-sheet and net-sheet-send (/resources/seller-net-sheet/), mortgage-send
 (/resources/mortgage-affordability-calculator/), closing-cost-send
 (/resources/buyer-closing-cost-calculator/), tax-savings-send (/resources/florida-property-tax-calculator/), homestead-send
-(/resources/florida-homestead-exemption/). Every submission is also POSTed to a Zapier webhook
+(/resources/florida-homestead-exemption/), title-insurance-send (/resources/florida-title-insurance-calculator/). Every submission is also POSTed to a Zapier webhook
 (workflow "blog-forms-to-boldtrail-and-net-sheet-email"), which emails the visitor their results
 from dawn@ and creates the BoldTrail contact. A new "email me my results" form needs an entry in that
 workflow's FORMS map and an email template. Email alerts: Forms -> Submission notifications
