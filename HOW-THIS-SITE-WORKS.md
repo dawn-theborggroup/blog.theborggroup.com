@@ -103,6 +103,8 @@ Added Nov 4, 2026.
   Villa, StockCooperative. Duplexes and manufactured homes are left out.
 - scripts/build-market-snapshot.mjs (first build step) turns the data into
   /resources/southwest-florida-housing-market/ (Q&A text, tables, FAQPage + Dataset schema, dateModified = data date).
+- The same script fills the "Southwest Florida market today" strip on the blog home page (between the
+  market-today:start / market-today:end comments in index.html) with total for sale, pending and recently closed.
 - widgets/market-ticker/ is the scrolling ticker embedded with an iframe in the Community Guides section of the
   theborggroup.com homepage (BoldTrail). It reads /data/market-ticker.json.
 - To change a saved search: update the link in scripts/market/ticker_config.json.
