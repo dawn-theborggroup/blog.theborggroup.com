@@ -71,6 +71,12 @@ Added Nov 3, 2026. Each tool is its own folder with an index.html, so URLs are c
   disability with income limit, disabled first responder), combat-related discount = VA rating % for 65+.
   Senior income limit $38,686 (2026 tax year; update each January). Senior exemptions are listed but not in
   the dollar estimate. Savings use the entered value with no SOH cap.
+- Southwest Florida School Grades (/resources/southwest-florida-school-grades/), added Nov 5, 2026.
+  Official FLDOE 2025-26 grades (SchoolGrades26.xlsx from fldoe.org) for 157 Lee and Collier public and
+  charter schools (Lee virtual franchise excluded), with 2025 and 2024 grades for history. City/ZIP from the
+  NCES school directory. Data is inline in the page (var SCHOOLS). District grades: Collier A, Lee B.
+  Lee uses proximity/choice zones; Collier uses attendance boundaries; each links to its district lookup.
+  UPDATE EACH JULY when FLDOE releases new grades. Form school-grades-send.
 
 ## Buy With Us page: /buy-with-us/
 Added Nov 3, 2026. The main menu's "Buy" link points here. Home search form submits to
@@ -86,7 +92,8 @@ Forms on this site: flood-report (/resources/flood-zone-lookup/), buyer-search-a
 seller-net-sheet and net-sheet-send (/resources/seller-net-sheet/), mortgage-send
 (/resources/mortgage-affordability-calculator/), closing-cost-send
 (/resources/buyer-closing-cost-calculator/), tax-savings-send (/resources/florida-property-tax-calculator/), homestead-send
-(/resources/florida-homestead-exemption/), title-insurance-send (/resources/florida-title-insurance-calculator/). Every submission is also POSTed to a Zapier webhook
+(/resources/florida-homestead-exemption/), title-insurance-send (/resources/florida-title-insurance-calculator/), school-grades-send
+(/resources/southwest-florida-school-grades/). Every submission is also POSTed to a Zapier webhook
 (workflow "blog-forms-to-boldtrail-and-net-sheet-email"), which emails the visitor their results
 from dawn@ and creates the BoldTrail contact. A new "email me my results" form needs an entry in that
 workflow's FORMS map and an email template. Email alerts: Forms -> Submission notifications
