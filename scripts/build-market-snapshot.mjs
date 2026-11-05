@@ -242,6 +242,24 @@ ${sections}
 </body>
 </html>
 `;
+// Blog home page: a one-line "market today" strip between the markers, so the newest numbers are
+// one click from the front page (and readable by crawlers as plain text).
+const HOME = "index.html";
+if (existsSync(HOME)) {
+  const totPending = areas.reduce((t, a) => t + (a.sf?.pending || 0) + (a.condo?.pending || 0), 0);
+  const totSold = areas.reduce((t, a) => t + (a.sf?.sold || 0) + (a.condo?.sold || 0), 0);
+  const strip = `<!-- market-today:start (filled in at deploy time by scripts/build-market-snapshot.mjs) -->
+  <div class="market-today-wrap"><a class="market-today" href="/resources/southwest-florida-housing-market/">
+    <span class="mt-k"><i aria-hidden="true"></i>Southwest Florida market today</span>
+    <span class="mt-v"><b>${num(totActive)}</b> homes &amp; condos for sale <span class="mt-sep">&middot;</span> <b>${num(totPending)}</b> pending <span class="mt-sep">&middot;</span> <b>${num(totSold)}</b> recently closed</span>
+    <span class="mt-go">See every area, updated ${esc(when)} &rarr;</span>
+  </a></div>
+  <!-- market-today:end -->`;
+  const home = readFileSync(HOME, "utf8");
+  const re = /<!-- market-today:start[\s\S]*?<!-- market-today:end -->/;
+  if (re.test(home)) writeFileSync(HOME, home.replace(re, strip));
+}
+
 mkdirSync(OUT_DIR, { recursive: true });
 writeFileSync(`${OUT_DIR}/index.html`, html);
 console.log(`market snapshot: built for ${when} (${areas.length} areas)`);
