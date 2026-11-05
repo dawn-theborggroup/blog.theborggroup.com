@@ -222,9 +222,24 @@ html, body { overflow-x: hidden; }
 
 .blog-hero {
   max-width: var(--col-wide);
-  margin: var(--space-5) auto var(--space-4);
+  margin: var(--space-4) auto var(--space-4);
   padding: 0 var(--space-3);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: center;
 }
+.bh-start { background: #fff; border: 1px solid var(--silver-light); border-top: 3px solid var(--rose-muted); padding: 1.6rem 1.7rem 1.4rem; }
+.blog-hero .bh-start__k { max-width: none; font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; color: var(--silver-dark); margin: 0 0 .6rem; }
+.bh-start ul { list-style: none; margin: 0; padding: 0; }
+.bh-start li a { display: flex; flex-direction: column; gap: 2px; padding: .75rem 0; border-bottom: 1px solid var(--silver-light); text-decoration: none; color: var(--charcoal); }
+.bh-start li a span { font-family: var(--font-display, Georgia, serif); font-size: 1.12rem; line-height: 1.3; }
+.bh-start li a em { font-style: normal; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--dusty-rose); }
+.bh-start li a:hover span { color: var(--dusty-rose); }
+.bh-start__all { display: inline-block; margin-top: .9rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--charcoal); border-bottom: 1px solid var(--rose-muted); text-decoration: none; }
+.blog-hero .bh-start__call { max-width: none; margin: .9rem 0 0; font-size: .9rem; color: var(--silver-dark); }
+.bh-start__call a { color: var(--charcoal); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--rose-muted); white-space: nowrap; }
+@media (max-width: 860px) { .blog-hero { grid-template-columns: 1fr; gap: var(--space-3); } }
 
 .blog-hero h1 {
   font-size: clamp(2.25rem, 4.5vw, 3.25rem);
@@ -505,8 +520,8 @@ html, body { overflow-x: hidden; }
 .related a:hover { color: var(--dusty-rose); }
 
 /* Blog home: "Southwest Florida market today" strip + scrolling ticker (filled in by scripts/build-market-snapshot.mjs) */
-.market-today-wrap { max-width: var(--col-wide); margin: 0 auto var(--space-3); padding: 0 var(--space-3); }
-.market-today { background: var(--charcoal); color: var(--cream); border-radius: 2px; overflow: hidden; }
+.market-today-wrap { max-width: none; margin: 0; padding: 0; }
+.market-today { background: var(--charcoal); color: var(--cream); border-radius: 0; overflow: hidden; border-bottom: 2px solid var(--rose-muted); }
 .market-today a { color: inherit; text-decoration: none; }
 .market-today .mt-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4rem 1.2rem; padding: .85rem 1.2rem .7rem; text-align: center; }
 .market-today .mt-head:hover { color: #fff; }
