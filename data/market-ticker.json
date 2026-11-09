@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-08T06:28-05:00",
- "updatedLabel": "November 8, 2026",
+ "updated": "2026-11-09T06:28-05:00",
+ "updatedLabel": "November 9, 2026",
  "source": "Southwest Florida MLS via OneHome saved searches",
  "areas": [
   {
@@ -9,40 +9,40 @@
    "url": "https://communities.theborggroup.com/naples/",
    "soldDays": 45,
    "sf": {
-    "active": 1995,
+    "active": 1998,
     "pending": 380,
-    "sold": 485,
-    "medianSold": 808151,
-    "medianList": 1087000,
+    "sold": 473,
+    "medianSold": 800000,
+    "medianList": 1075000,
     "saleToList": 96.3
    },
    "condo": {
-    "active": 2360,
-    "pending": 340,
-    "sold": 393,
-    "medianSold": 450000,
+    "active": 2358,
+    "pending": 347,
+    "sold": 377,
+    "medianSold": 455000,
     "medianList": 474950,
-    "saleToList": 95.7
+    "saleToList": 95.8
    },
    "reads": {
     "SF pending": 380,
-    "Condo sold 45 days": 396,
-    "SF sold 45 days under $1M": 297,
-    "SF sold 45 days over $1M": 186,
-    "Condo pending": 343,
-    "SF active under $600K": 357,
-    "SF active $600-800K": 371,
+    "Condo sold 45 days": 380,
+    "SF sold 45 days under $1M": 291,
+    "SF sold 45 days over $1M": 180,
+    "Condo pending": 350,
+    "SF active under $600K": 359,
+    "SF active $600-800K": 372,
     "SF active $800K-1.1M": 308,
     "SF active $1.1-2M": 390,
     "SF active $2-3M": 151,
     "SF active $3M+": 439,
-    "Condo active under $250K": 296,
-    "Condo active $250-325K": 347,
-    "Condo active $325-425K": 455,
-    "Condo active $425-550K": 343,
-    "Condo active $550-750K": 286,
+    "Condo active under $250K": 295,
+    "Condo active $250-325K": 349,
+    "Condo active $325-425K": 453,
+    "Condo active $425-550K": 341,
+    "Condo active $550-750K": 289,
     "Condo active $750K-1.25M": 280,
-    "Condo active $1.25M+": 441
+    "Condo active $1.25M+": 439
    }
   },
   {
@@ -51,26 +51,26 @@
    "url": "https://communities.theborggroup.com/bonita-springs/",
    "soldDays": 45,
    "sf": {
-    "active": 268,
+    "active": 270,
     "pending": 63,
-    "sold": 83,
+    "sold": 77,
     "medianSold": 710000,
     "medianList": 829500,
-    "saleToList": 96.4
+    "saleToList": 96.6
    },
    "condo": {
-    "active": 378,
+    "active": 377,
     "pending": 50,
-    "sold": 79,
-    "medianSold": 390000,
-    "medianList": 456250,
-    "saleToList": 95.9
+    "sold": 77,
+    "medianSold": 400000,
+    "medianList": 459000,
+    "saleToList": 95.8
    },
    "reads": {
-    "Condo active": 385,
+    "Condo active": 384,
     "Condo pending": 52,
-    "SF active+pending": 328,
-    "SF + condo sold 45 days": 162
+    "SF active+pending": 330,
+    "SF + condo sold 45 days": 154
    }
   },
   {
@@ -95,7 +95,7 @@
     "saleToList": 96.1
    },
    "reads": {
-    "Condo active+pending": 338,
+    "Condo active+pending": 340,
     "SF active+pending": 188,
     "SF + condo sold 45 days": 33
    }
@@ -114,15 +114,15 @@
     "saleToList": 96.5
    },
    "condo": {
-    "active": 251,
+    "active": 253,
     "pending": 15,
     "sold": 22,
     "medianSold": 408500,
-    "medianList": 575000,
+    "medianList": 569900,
     "saleToList": 95.0
    },
    "reads": {
-    "Condo active+pending": 338,
+    "Condo active+pending": 340,
     "SF active+pending": 188,
     "SF + condo sold 45 days": 33
    }
@@ -133,25 +133,25 @@
    "url": "https://communities.theborggroup.com/estero/",
    "soldDays": 45,
    "sf": {
-    "active": 293,
-    "pending": 80,
-    "sold": 84,
-    "medianSold": 674950,
+    "active": 291,
+    "pending": 82,
+    "sold": 79,
+    "medianSold": 675000,
     "medianList": 715000,
-    "saleToList": 97.0
+    "saleToList": 96.9
    },
    "condo": {
-    "active": 265,
-    "pending": 51,
-    "sold": 63,
-    "medianSold": 360000,
-    "medianList": 399900,
-    "saleToList": 97.0
+    "active": 264,
+    "pending": 52,
+    "sold": 59,
+    "medianSold": 350000,
+    "medianList": 399894,
+    "saleToList": 97.2
    },
    "reads": {
     "Condo active+pending": 317,
     "SF active+pending": 372,
-    "SF + condo sold 45 days": 147
+    "SF + condo sold 45 days": 138
    }
   },
   {
@@ -160,32 +160,32 @@
    "url": "https://communities.theborggroup.com/fort-myers/",
    "soldDays": 45,
    "sf": {
-    "active": 1190,
-    "pending": 247,
-    "sold": 317,
-    "medianSold": 470000,
+    "active": 1185,
+    "pending": 251,
+    "sold": 306,
+    "medianSold": 472500,
     "medianList": 475000,
-    "saleToList": 96.6
+    "saleToList": 96.5
    },
    "condo": {
-    "active": 1233,
-    "pending": 169,
-    "sold": 215,
-    "medianSold": 240500,
+    "active": 1232,
+    "pending": 172,
+    "sold": 208,
+    "medianSold": 240000,
     "medianList": 244900,
-    "saleToList": 95.2
+    "saleToList": 95.1
    },
    "reads": {
     "Condo active under $200K": 433,
-    "Condo active $200-300K": 428,
+    "Condo active $200-300K": 427,
     "Condo active $300K+": 393,
-    "Condo pending": 171,
-    "Condo sold 45 days": 216,
-    "SF active under $400K": 396,
-    "SF active $400-600K": 424,
+    "Condo pending": 174,
+    "Condo sold 45 days": 209,
+    "SF active under $400K": 397,
+    "SF active $400-600K": 418,
     "SF active $600K+": 368,
-    "SF pending": 245,
-    "SF sold 45 days": 316
+    "SF pending": 249,
+    "SF sold 45 days": 305
    }
   },
   {
@@ -194,16 +194,16 @@
    "url": "https://communities.theborggroup.com/cape-coral/",
    "soldDays": 30,
    "sf": {
-    "active": 2325,
-    "pending": 461,
-    "sold": 383,
+    "active": 2332,
+    "pending": 467,
+    "sold": 351,
     "medianSold": 395000,
-    "medianList": 415950,
+    "medianList": 419000,
     "saleToList": 97.9
    },
    "condo": {
-    "active": 276,
-    "pending": 35,
+    "active": 278,
+    "pending": 34,
     "sold": 28,
     "medianSold": 170000,
     "medianList": 218500,
@@ -213,12 +213,12 @@
     "SF active under $300K": 307,
     "SF active $300-340K": 353,
     "SF active $340-400K": 467,
-    "SF active $400-500K": 402,
-    "SF active $500-700K": 403,
-    "SF active $700K+": 432,
-    "Condo active, all prices": 276,
-    "Pending SF + condo": 496,
-    "Sold last 30 days SF + condo": 412
+    "SF active $400-500K": 406,
+    "SF active $500-700K": 407,
+    "SF active $700K+": 431,
+    "Condo active, all prices": 278,
+    "Pending SF + condo": 501,
+    "Sold last 30 days SF + condo": 380
    }
   }
  ],
