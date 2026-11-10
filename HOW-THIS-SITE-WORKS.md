@@ -123,3 +123,8 @@ Added Nov 4, 2026.
 - widgets/market-ticker/ is the scrolling ticker embedded with an iframe in the Community Guides section of the
   theborggroup.com homepage (BoldTrail). It reads /data/market-ticker.json.
 - To change a saved search: update the link in scripts/market/ticker_config.json.
+
+## IndexNow (Bing): automatic
+Added Nov 10, 2026. The last build step, scripts/indexnow.mjs, submits every sitemap URL with a
+lastmod in the last 2 days to IndexNow (api.indexnow.org), which Bing uses. The key file is
+/1945e5ece74b76c5fa12a7a456b53db5.txt at the repo root; do not delete or rename it. Warn-only.
