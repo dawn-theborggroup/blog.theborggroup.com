@@ -7,9 +7,11 @@
 # Last, scripts/check-links.mjs looks for links that lead to "page not found" and lists
 # them in the deploy log as "WARNING: broken link ...". It only warns — it never stops a
 # deploy (the "|| true" guarantees that), so the daily post always publishes.
+# Finally, scripts/indexnow.mjs tells Bing about any page changed in the last 2 days
+# (also warn-only).
 [build]
   functions = "netlify/functions"
-  command = "node scripts/build-market-snapshot.mjs && node scripts/apply-favicon.mjs && node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/build-feed.mjs && node scripts/seo-build.mjs && (node scripts/check-links.mjs || true)"
+  command = "node scripts/build-market-snapshot.mjs && node scripts/apply-favicon.mjs && node scripts/apply-footer.mjs && node scripts/build-listings.mjs && node scripts/build-feed.mjs && node scripts/seo-build.mjs && (node scripts/check-links.mjs || true) && (node scripts/indexnow.mjs || true)"
   publish = "."
 
 # Serve the sitemap and robots file with the right content types.
