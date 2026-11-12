@@ -115,11 +115,23 @@ const crumbs = {
 };
 const ld = (o) => `<script type="application/ld+json">\n${JSON.stringify(o, null, 1)}\n</script>`;
 
+// Per-area buttons. Estero has live community market reports; the other areas
+// link to their community guides until they get live reports of their own.
+const LIVE_REPORTS = { estero: "https://communities.theborggroup.com/market-reports/" };
+const areaButtons = (area) => {
+  const btns = [];
+  if (LIVE_REPORTS[area.id])
+    btns.push(`<a class="btn" href="${LIVE_REPORTS[area.id]}">See ${esc(area.name)}'s live community market reports</a>`);
+  if (area.url.includes("communities.theborggroup.com"))
+    btns.push(`<a class="btn btn--ghost" href="${esc(area.url)}">Explore ${esc(area.name)} communities</a>`);
+  return btns.length ? `\n  <p class="area-btns" style="display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 30px">${btns.join("")}</p>` : "";
+};
+
 const sections = qs
   .map(
     (x) => `
   <h2 id="${x.area.id}">${esc(x.q)}</h2>
-  <p>${esc(x.a)}${x.area.url.includes("communities.theborggroup.com") ? ` <a href="${esc(x.area.url)}">Explore ${esc(x.area.name)} communities</a>.` : ""}</p>`
+  <p>${esc(x.a)}</p>${areaButtons(x.area)}`
   )
   .join("");
 
